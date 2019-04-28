@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SyncJob.Domain.Shared\SyncJob.Domain.Shared.csproj" />
+    <PackageReference Include="Volo.Abp.BackgroundJobs" Version="0.16.0" />
+    <PackageReference Include="Volo.Abp.Ddd.Domain" Version="0.16.0" />
+    <PackageReference Include="Volo.Abp.Emailing" Version="0.16.0" />
+    <PackageReference Include="Volo.Abp.HangFire" Version="0.16.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Localization\Domain\*.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Localization\Domain\*.json" />
+  </ItemGroup>
+
+</Project>
