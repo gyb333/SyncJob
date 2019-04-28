@@ -12512,3 +12512,663 @@ System.NotSupportedException: HTTP method "GET" & path "api/SyncJob/JobTest" ove
 2019-04-28 16:40:08.423 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported cultures '["zh-Hans-CN","zh-Hans"]'.
 2019-04-28 16:40:08.423 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported UI Cultures '["zh-Hans-CN","zh-Hans"]'.
 2019-04-28 16:40:08.429 +08:00 [INF] Request finished in 6.8184ms 200 application/json
+2019-04-28 16:44:16.517 +08:00 [INF] Starting web host.
+2019-04-28 16:44:22.501 +08:00 [INF] User profile is available. Using 'C:\Users\zhongduzhi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-04-28 16:44:22.591 +08:00 [INF] Loaded modules:
+2019-04-28 16:44:22.591 +08:00 [INF] - Volo.Abp.Castle.AbpCastleCoreModule
+2019-04-28 16:44:22.591 +08:00 [INF] - Volo.Abp.Autofac.AbpAutofacModule
+2019-04-28 16:44:22.591 +08:00 [INF] - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2019-04-28 16:44:22.591 +08:00 [INF] - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2019-04-28 16:44:22.591 +08:00 [INF] - Volo.Abp.Security.AbpSecurityModule
+2019-04-28 16:44:22.591 +08:00 [INF] - Volo.Abp.Data.AbpDataModule
+2019-04-28 16:44:22.591 +08:00 [INF] - Volo.Abp.MultiTenancy.AbpMultiTenancyModule
+2019-04-28 16:44:22.591 +08:00 [INF] - Volo.Abp.Settings.AbpSettingsModule
+2019-04-28 16:44:22.591 +08:00 [INF] - Volo.Abp.Localization.AbpLocalizationModule
+2019-04-28 16:44:22.591 +08:00 [INF] - SyncJob.DomainSharedModule
+2019-04-28 16:44:22.591 +08:00 [INF] - SyncJob.DomainModule
+2019-04-28 16:44:22.591 +08:00 [INF] - Volo.Abp.Timing.AbpTimingModule
+2019-04-28 16:44:22.591 +08:00 [INF] - Volo.Abp.Json.AbpJsonModule
+2019-04-28 16:44:22.591 +08:00 [INF] - Volo.Abp.Threading.AbpThreadingModule
+2019-04-28 16:44:22.591 +08:00 [INF] - Volo.Abp.Auditing.AbpAuditingModule
+2019-04-28 16:44:22.591 +08:00 [INF] - Volo.Abp.EventBus.AbpEventBusModule
+2019-04-28 16:44:22.591 +08:00 [INF] - Volo.Abp.Guids.AbpGuidsModule
+2019-04-28 16:44:22.591 +08:00 [INF] - Volo.Abp.Uow.AbpUnitOfWorkModule
+2019-04-28 16:44:22.591 +08:00 [INF] - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2019-04-28 16:44:22.591 +08:00 [INF] - Volo.Abp.Domain.AbpDddDomainModule
+2019-04-28 16:44:22.592 +08:00 [INF] - Volo.Abp.Validation.AbpValidationModule
+2019-04-28 16:44:22.592 +08:00 [INF] - Volo.Abp.Authorization.AbpAuthorizationModule
+2019-04-28 16:44:22.592 +08:00 [INF] - Volo.Abp.Http.AbpHttpAbstractionsModule
+2019-04-28 16:44:22.592 +08:00 [INF] - Volo.Abp.Features.AbpFeaturesModule
+2019-04-28 16:44:22.592 +08:00 [INF] - Volo.Abp.Application.AbpDddApplicationModule
+2019-04-28 16:44:22.592 +08:00 [INF] - SyncJob.ApplicationContractsModule
+2019-04-28 16:44:22.592 +08:00 [INF] - Volo.Abp.AutoMapper.AbpAutoMapperModule
+2019-04-28 16:44:22.592 +08:00 [INF] - SyncJob.ApplicationModule
+2019-04-28 16:44:22.592 +08:00 [INF] - Volo.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2019-04-28 16:44:22.592 +08:00 [INF] - SyncJob.EntityFrameworkCore.EFCoreModule
+2019-04-28 16:44:22.592 +08:00 [INF] - Volo.Abp.Http.AbpHttpModule
+2019-04-28 16:44:22.592 +08:00 [INF] - Volo.Abp.UI.AbpUiModule
+2019-04-28 16:44:22.592 +08:00 [INF] - Volo.Abp.AspNetCore.AbpAspNetCoreModule
+2019-04-28 16:44:22.592 +08:00 [INF] - Volo.Abp.ApiVersioning.AbpApiVersioningAbstractionsModule
+2019-04-28 16:44:22.592 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcContractsModule
+2019-04-28 16:44:22.592 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule
+2019-04-28 16:44:22.592 +08:00 [INF] - SyncJob.HttpApiModule
+2019-04-28 16:44:22.592 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainSharedModule
+2019-04-28 16:44:22.592 +08:00 [INF] - Volo.Abp.Serialization.AbpSerializationModule
+2019-04-28 16:44:22.592 +08:00 [INF] - Volo.Abp.Caching.AbpCachingModule
+2019-04-28 16:44:22.592 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainModule
+2019-04-28 16:44:22.592 +08:00 [INF] - Volo.Abp.PermissionManagement.EntityFrameworkCore.AbpPermissionManagementEntityFrameworkCoreModule
+2019-04-28 16:44:22.592 +08:00 [INF] - Volo.Abp.SettingManagement.AbpSettingManagementDomainSharedModule
+2019-04-28 16:44:22.592 +08:00 [INF] - Volo.Abp.SettingManagement.AbpSettingManagementDomainModule
+2019-04-28 16:44:22.592 +08:00 [INF] - Volo.Abp.SettingManagement.EntityFrameworkCore.AbpSettingManagementEntityFrameworkCoreModule
+2019-04-28 16:44:22.592 +08:00 [INF] - Volo.Abp.AuditLogging.AbpAuditLoggingDomainSharedModule
+2019-04-28 16:44:22.592 +08:00 [INF] - Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule
+2019-04-28 16:44:22.592 +08:00 [INF] - Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule
+2019-04-28 16:44:22.592 +08:00 [INF] - Volo.Abp.EntityFrameworkCore.MySQL.AbpEntityFrameworkCoreMySQLModule
+2019-04-28 16:44:22.592 +08:00 [INF] - Volo.Abp.BackgroundJobs.AbpBackgroundJobsAbstractionsModule
+2019-04-28 16:44:22.592 +08:00 [INF] - Volo.Abp.Hangfire.AbpHangfireModule
+2019-04-28 16:44:22.592 +08:00 [INF] - Volo.Abp.BackgroundJobs.Hangfire.AbpBackgroundJobsHangfireModule
+2019-04-28 16:44:22.592 +08:00 [INF] - SyncJob.Host.AppModule
+2019-04-28 16:44:22.635 +08:00 [DBG] No class found with auto mapping attributes.
+2019-04-28 16:44:22.999 +08:00 [INF] DB tables already exist. Exit install
+2019-04-28 16:44:23.017 +08:00 [INF] Starting Hangfire Server
+2019-04-28 16:44:23.020 +08:00 [INF] Using job storage: 'Server: Master@hangfire'
+2019-04-28 16:44:23.020 +08:00 [INF] Using the following options for SQL Server job storage:
+2019-04-28 16:44:23.021 +08:00 [INF]     Queue poll interval: 00:00:15.
+2019-04-28 16:44:23.021 +08:00 [INF] Using the following options for Hangfire Server:
+2019-04-28 16:44:23.021 +08:00 [INF]     Worker count: 20
+2019-04-28 16:44:23.021 +08:00 [INF]     Listening queues: 'default'
+2019-04-28 16:44:23.021 +08:00 [INF]     Shutdown timeout: 00:00:15
+2019-04-28 16:44:23.021 +08:00 [INF]     Schedule polling interval: 00:00:15
+2019-04-28 16:44:23.054 +08:00 [DBG] Background process 'BackgroundProcessingServer' started.
+2019-04-28 16:44:23.442 +08:00 [DBG] Background process 'ServerHeartbeat' started.
+2019-04-28 16:44:23.449 +08:00 [DBG] Background process 'ServerWatchdog' started.
+2019-04-28 16:44:23.484 +08:00 [DBG] Background process 'Hangfire.MySql.Core.ExpirationManager' started.
+2019-04-28 16:44:23.516 +08:00 [DBG] Background process 'Hangfire.MySql.Core.CountersAggregator' started.
+2019-04-28 16:44:23.516 +08:00 [DBG] Removing outdated records from table 'Hangfire_AggregatedCounter'...
+2019-04-28 16:44:23.523 +08:00 [DBG] Aggregating records in 'Counter' table...
+2019-04-28 16:44:23.543 +08:00 [INF] 10 servers were removed due to timeout
+2019-04-28 16:44:23.556 +08:00 [DBG] Background process 'Worker #4552f986' started.
+2019-04-28 16:44:23.559 +08:00 [DBG] delete from `Hangfire_AggregatedCounter` where ExpireAt < @now limit @count;
+2019-04-28 16:44:23.560 +08:00 [DBG] Background process 'Worker #2e7a399d' started.
+2019-04-28 16:44:23.574 +08:00 [DBG] Background process 'Worker #96a34e40' started.
+2019-04-28 16:44:23.626 +08:00 [DBG] Background process 'Worker #549da087' started.
+2019-04-28 16:44:23.643 +08:00 [DBG] Background process 'Worker #a77e0f9a' started.
+2019-04-28 16:44:23.656 +08:00 [DBG] Background process 'Worker #12a8e7ed' started.
+2019-04-28 16:44:23.673 +08:00 [DBG] removed records count=0
+2019-04-28 16:44:23.673 +08:00 [DBG] Removing outdated records from table 'Hangfire_Job'...
+2019-04-28 16:44:23.674 +08:00 [DBG] Background process 'Worker #35793bed' started.
+2019-04-28 16:44:23.700 +08:00 [DBG] delete from `Hangfire_Job` where ExpireAt < @now limit @count;
+2019-04-28 16:44:23.723 +08:00 [DBG] Background process 'Worker #0badc3dd' started.
+2019-04-28 16:44:23.759 +08:00 [DBG] removed records count=0
+2019-04-28 16:44:23.759 +08:00 [DBG] Background process 'Worker #c008006f' started.
+2019-04-28 16:44:23.760 +08:00 [DBG] Removing outdated records from table 'Hangfire_List'...
+2019-04-28 16:44:23.767 +08:00 [DBG] delete from `Hangfire_List` where ExpireAt < @now limit @count;
+2019-04-28 16:44:23.771 +08:00 [DBG] Background process 'Worker #95fbb9de' started.
+2019-04-28 16:44:23.789 +08:00 [DBG] removed records count=0
+2019-04-28 16:44:23.789 +08:00 [DBG] Background process 'Worker #d6ebd17d' started.
+2019-04-28 16:44:23.793 +08:00 [DBG] Removing outdated records from table 'Hangfire_Set'...
+2019-04-28 16:44:23.793 +08:00 [DBG] Background process 'Worker #9a8f1308' started.
+2019-04-28 16:44:23.793 +08:00 [DBG] delete from `Hangfire_Set` where ExpireAt < @now limit @count;
+2019-04-28 16:44:23.814 +08:00 [DBG] Background process 'Worker #ccb6e18c' started.
+2019-04-28 16:44:23.838 +08:00 [DBG] removed records count=0
+2019-04-28 16:44:23.838 +08:00 [DBG] Removing outdated records from table 'Hangfire_Hash'...
+2019-04-28 16:44:23.838 +08:00 [DBG] Background process 'Worker #7fce7f97' started.
+2019-04-28 16:44:23.855 +08:00 [DBG] delete from `Hangfire_Hash` where ExpireAt < @now limit @count;
+2019-04-28 16:44:23.872 +08:00 [DBG] Background process 'Worker #a07f46b9' started.
+2019-04-28 16:44:23.877 +08:00 [DBG] Background process 'Worker #426af7a7' started.
+2019-04-28 16:44:23.884 +08:00 [DBG] removed records count=0
+2019-04-28 16:44:23.891 +08:00 [DBG] Background process 'Worker #53abaeb0' started.
+2019-04-28 16:44:23.910 +08:00 [DBG] Background process 'Worker #c11d0bc2' started.
+2019-04-28 16:44:23.914 +08:00 [DBG] Background process 'Worker #28f9bebd' started.
+2019-04-28 16:44:23.929 +08:00 [DBG] Background process 'Worker #b9595e84' started.
+2019-04-28 16:44:23.939 +08:00 [DBG] Background process 'DelayedJobScheduler' started.
+2019-04-28 16:44:23.951 +08:00 [DBG] Background process 'RecurringJobScheduler' started.
+2019-04-28 16:44:25.516 +08:00 [INF] Starting Hangfire Server
+2019-04-28 16:44:25.516 +08:00 [INF] Using job storage: 'Server: Master@hangfire'
+2019-04-28 16:44:25.516 +08:00 [INF] Using the following options for SQL Server job storage:
+2019-04-28 16:44:25.516 +08:00 [INF]     Queue poll interval: 00:00:15.
+2019-04-28 16:44:25.516 +08:00 [INF] Using the following options for Hangfire Server:
+2019-04-28 16:44:25.516 +08:00 [INF]     Worker count: 2
+2019-04-28 16:44:25.516 +08:00 [INF]     Listening queues: 'default'
+2019-04-28 16:44:25.516 +08:00 [INF]     Shutdown timeout: 00:00:15
+2019-04-28 16:44:25.516 +08:00 [INF]     Schedule polling interval: 00:00:15
+2019-04-28 16:44:25.530 +08:00 [DBG] Background process 'BackgroundProcessingServer' started.
+2019-04-28 16:44:25.559 +08:00 [DBG] Background process 'ServerWatchdog' started.
+2019-04-28 16:44:25.559 +08:00 [DBG] Background process 'ServerHeartbeat' started.
+2019-04-28 16:44:25.574 +08:00 [DBG] Background process 'Hangfire.MySql.Core.ExpirationManager' started.
+2019-04-28 16:44:25.576 +08:00 [DBG] Removing outdated records from table 'Hangfire_AggregatedCounter'...
+2019-04-28 16:44:25.579 +08:00 [DBG] Background process 'Hangfire.MySql.Core.CountersAggregator' started.
+2019-04-28 16:44:25.580 +08:00 [DBG] delete from `Hangfire_AggregatedCounter` where ExpireAt < @now limit @count;
+2019-04-28 16:44:25.580 +08:00 [DBG] Aggregating records in 'Counter' table...
+2019-04-28 16:44:25.593 +08:00 [DBG] Background process 'Worker #cfae68cd' started.
+2019-04-28 16:44:25.598 +08:00 [DBG] removed records count=0
+2019-04-28 16:44:25.598 +08:00 [DBG] Removing outdated records from table 'Hangfire_Job'...
+2019-04-28 16:44:25.599 +08:00 [DBG] Background process 'Worker #6294a6ad' started.
+2019-04-28 16:44:25.605 +08:00 [DBG] delete from `Hangfire_Job` where ExpireAt < @now limit @count;
+2019-04-28 16:44:25.610 +08:00 [DBG] Background process 'DelayedJobScheduler' started.
+2019-04-28 16:44:25.619 +08:00 [DBG] Background process 'RecurringJobScheduler' started.
+2019-04-28 16:44:25.619 +08:00 [DBG] removed records count=0
+2019-04-28 16:44:25.619 +08:00 [DBG] Removing outdated records from table 'Hangfire_List'...
+2019-04-28 16:44:25.620 +08:00 [DBG] delete from `Hangfire_List` where ExpireAt < @now limit @count;
+2019-04-28 16:44:25.631 +08:00 [DBG] removed records count=0
+2019-04-28 16:44:25.631 +08:00 [DBG] Removing outdated records from table 'Hangfire_Set'...
+2019-04-28 16:44:25.631 +08:00 [DBG] delete from `Hangfire_Set` where ExpireAt < @now limit @count;
+2019-04-28 16:44:25.638 +08:00 [DBG] removed records count=0
+2019-04-28 16:44:25.638 +08:00 [DBG] Removing outdated records from table 'Hangfire_Hash'...
+2019-04-28 16:44:25.638 +08:00 [DBG] delete from `Hangfire_Hash` where ExpireAt < @now limit @count;
+2019-04-28 16:44:25.664 +08:00 [DBG] removed records count=0
+2019-04-28 16:44:26.082 +08:00 [INF] Initialized all modules.
+2019-04-28 16:44:26.488 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:57992/  
+2019-04-28 16:44:26.488 +08:00 [INF] Request starting HTTP/1.1 DEBUG http://localhost:57992/  0
+2019-04-28 16:44:26.531 +08:00 [INF] Request finished in 43.0225ms 200 
+2019-04-28 16:44:26.557 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-04-28 16:44:26.571 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported cultures '["zh-Hans-CN","zh-Hans"]'.
+2019-04-28 16:44:26.574 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported UI Cultures '["zh-Hans-CN","zh-Hans"]'.
+2019-04-28 16:44:26.769 +08:00 [INF] Route matched with {action = "Index", controller = "Home", area = ""}. Executing action SyncJob.Host.Controllers.HomeController.Index (SyncJob.Host)
+2019-04-28 16:44:26.861 +08:00 [INF] Executing action method SyncJob.Host.Controllers.HomeController.Index (SyncJob.Host) - Validation state: "Valid"
+2019-04-28 16:44:26.864 +08:00 [INF] Executed action method SyncJob.Host.Controllers.HomeController.Index (SyncJob.Host), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 0.217ms.
+2019-04-28 16:44:26.870 +08:00 [INF] Executing RedirectResult, redirecting to /swagger.
+2019-04-28 16:44:26.872 +08:00 [INF] Executed action SyncJob.Host.Controllers.HomeController.Index (SyncJob.Host) in 101.414ms
+2019-04-28 16:44:26.875 +08:00 [INF] Request finished in 389.1688ms 302 
+2019-04-28 16:44:26.888 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:57992/swagger/  
+2019-04-28 16:44:26.895 +08:00 [INF] Request finished in 6.7656ms 200 text/html
+2019-04-28 16:44:27.718 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:57992/swagger/swagger-ui-standalone-preset.js.map  
+2019-04-28 16:44:27.723 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-04-28 16:44:27.723 +08:00 [INF] Request finished in 5.25ms 404 
+2019-04-28 16:44:27.788 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:57992/swagger/v1/swagger.json  
+2019-04-28 16:44:27.962 +08:00 [INF] Request finished in 174.2593ms 200 application/json
+2019-04-28 16:45:58.929 +08:00 [INF] Starting web host.
+2019-04-28 16:46:04.521 +08:00 [INF] User profile is available. Using 'C:\Users\zhongduzhi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-04-28 16:46:04.608 +08:00 [INF] Loaded modules:
+2019-04-28 16:46:04.608 +08:00 [INF] - Volo.Abp.Castle.AbpCastleCoreModule
+2019-04-28 16:46:04.608 +08:00 [INF] - Volo.Abp.Autofac.AbpAutofacModule
+2019-04-28 16:46:04.608 +08:00 [INF] - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2019-04-28 16:46:04.608 +08:00 [INF] - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2019-04-28 16:46:04.608 +08:00 [INF] - Volo.Abp.Security.AbpSecurityModule
+2019-04-28 16:46:04.608 +08:00 [INF] - Volo.Abp.Data.AbpDataModule
+2019-04-28 16:46:04.608 +08:00 [INF] - Volo.Abp.MultiTenancy.AbpMultiTenancyModule
+2019-04-28 16:46:04.608 +08:00 [INF] - Volo.Abp.Settings.AbpSettingsModule
+2019-04-28 16:46:04.609 +08:00 [INF] - Volo.Abp.Localization.AbpLocalizationModule
+2019-04-28 16:46:04.609 +08:00 [INF] - SyncJob.DomainSharedModule
+2019-04-28 16:46:04.609 +08:00 [INF] - SyncJob.DomainModule
+2019-04-28 16:46:04.609 +08:00 [INF] - Volo.Abp.Timing.AbpTimingModule
+2019-04-28 16:46:04.609 +08:00 [INF] - Volo.Abp.Json.AbpJsonModule
+2019-04-28 16:46:04.609 +08:00 [INF] - Volo.Abp.Threading.AbpThreadingModule
+2019-04-28 16:46:04.609 +08:00 [INF] - Volo.Abp.Auditing.AbpAuditingModule
+2019-04-28 16:46:04.609 +08:00 [INF] - Volo.Abp.EventBus.AbpEventBusModule
+2019-04-28 16:46:04.609 +08:00 [INF] - Volo.Abp.Guids.AbpGuidsModule
+2019-04-28 16:46:04.609 +08:00 [INF] - Volo.Abp.Uow.AbpUnitOfWorkModule
+2019-04-28 16:46:04.609 +08:00 [INF] - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2019-04-28 16:46:04.609 +08:00 [INF] - Volo.Abp.Domain.AbpDddDomainModule
+2019-04-28 16:46:04.609 +08:00 [INF] - Volo.Abp.Validation.AbpValidationModule
+2019-04-28 16:46:04.609 +08:00 [INF] - Volo.Abp.Authorization.AbpAuthorizationModule
+2019-04-28 16:46:04.609 +08:00 [INF] - Volo.Abp.Http.AbpHttpAbstractionsModule
+2019-04-28 16:46:04.609 +08:00 [INF] - Volo.Abp.Features.AbpFeaturesModule
+2019-04-28 16:46:04.609 +08:00 [INF] - Volo.Abp.Application.AbpDddApplicationModule
+2019-04-28 16:46:04.609 +08:00 [INF] - SyncJob.ApplicationContractsModule
+2019-04-28 16:46:04.609 +08:00 [INF] - Volo.Abp.AutoMapper.AbpAutoMapperModule
+2019-04-28 16:46:04.609 +08:00 [INF] - SyncJob.ApplicationModule
+2019-04-28 16:46:04.609 +08:00 [INF] - Volo.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2019-04-28 16:46:04.609 +08:00 [INF] - SyncJob.EntityFrameworkCore.EFCoreModule
+2019-04-28 16:46:04.609 +08:00 [INF] - Volo.Abp.Http.AbpHttpModule
+2019-04-28 16:46:04.609 +08:00 [INF] - Volo.Abp.UI.AbpUiModule
+2019-04-28 16:46:04.609 +08:00 [INF] - Volo.Abp.AspNetCore.AbpAspNetCoreModule
+2019-04-28 16:46:04.609 +08:00 [INF] - Volo.Abp.ApiVersioning.AbpApiVersioningAbstractionsModule
+2019-04-28 16:46:04.609 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcContractsModule
+2019-04-28 16:46:04.609 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule
+2019-04-28 16:46:04.609 +08:00 [INF] - SyncJob.HttpApiModule
+2019-04-28 16:46:04.609 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainSharedModule
+2019-04-28 16:46:04.609 +08:00 [INF] - Volo.Abp.Serialization.AbpSerializationModule
+2019-04-28 16:46:04.609 +08:00 [INF] - Volo.Abp.Caching.AbpCachingModule
+2019-04-28 16:46:04.609 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainModule
+2019-04-28 16:46:04.609 +08:00 [INF] - Volo.Abp.PermissionManagement.EntityFrameworkCore.AbpPermissionManagementEntityFrameworkCoreModule
+2019-04-28 16:46:04.609 +08:00 [INF] - Volo.Abp.SettingManagement.AbpSettingManagementDomainSharedModule
+2019-04-28 16:46:04.609 +08:00 [INF] - Volo.Abp.SettingManagement.AbpSettingManagementDomainModule
+2019-04-28 16:46:04.609 +08:00 [INF] - Volo.Abp.SettingManagement.EntityFrameworkCore.AbpSettingManagementEntityFrameworkCoreModule
+2019-04-28 16:46:04.609 +08:00 [INF] - Volo.Abp.AuditLogging.AbpAuditLoggingDomainSharedModule
+2019-04-28 16:46:04.609 +08:00 [INF] - Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule
+2019-04-28 16:46:04.609 +08:00 [INF] - Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule
+2019-04-28 16:46:04.609 +08:00 [INF] - Volo.Abp.EntityFrameworkCore.MySQL.AbpEntityFrameworkCoreMySQLModule
+2019-04-28 16:46:04.609 +08:00 [INF] - Volo.Abp.BackgroundJobs.AbpBackgroundJobsAbstractionsModule
+2019-04-28 16:46:04.609 +08:00 [INF] - Volo.Abp.Hangfire.AbpHangfireModule
+2019-04-28 16:46:04.609 +08:00 [INF] - Volo.Abp.BackgroundJobs.Hangfire.AbpBackgroundJobsHangfireModule
+2019-04-28 16:46:04.609 +08:00 [INF] - SyncJob.Host.AppModule
+2019-04-28 16:46:04.652 +08:00 [DBG] No class found with auto mapping attributes.
+2019-04-28 16:46:05.009 +08:00 [INF] DB tables already exist. Exit install
+2019-04-28 16:46:05.027 +08:00 [INF] Starting Hangfire Server
+2019-04-28 16:46:05.030 +08:00 [INF] Using job storage: 'Server: Master@hangfire'
+2019-04-28 16:46:05.030 +08:00 [INF] Using the following options for SQL Server job storage:
+2019-04-28 16:46:05.031 +08:00 [INF]     Queue poll interval: 00:00:15.
+2019-04-28 16:46:05.031 +08:00 [INF] Using the following options for Hangfire Server:
+2019-04-28 16:46:05.031 +08:00 [INF]     Worker count: 20
+2019-04-28 16:46:05.031 +08:00 [INF]     Listening queues: 'default'
+2019-04-28 16:46:05.031 +08:00 [INF]     Shutdown timeout: 00:00:15
+2019-04-28 16:46:05.031 +08:00 [INF]     Schedule polling interval: 00:00:15
+2019-04-28 16:46:05.065 +08:00 [DBG] Background process 'BackgroundProcessingServer' started.
+2019-04-28 16:46:05.350 +08:00 [DBG] Background process 'ServerHeartbeat' started.
+2019-04-28 16:46:05.350 +08:00 [DBG] Background process 'ServerWatchdog' started.
+2019-04-28 16:46:05.356 +08:00 [DBG] Background process 'Hangfire.MySql.Core.ExpirationManager' started.
+2019-04-28 16:46:05.369 +08:00 [DBG] Background process 'Hangfire.MySql.Core.CountersAggregator' started.
+2019-04-28 16:46:05.380 +08:00 [DBG] Background process 'Worker #81813c7f' started.
+2019-04-28 16:46:05.406 +08:00 [DBG] Aggregating records in 'Counter' table...
+2019-04-28 16:46:05.409 +08:00 [DBG] Removing outdated records from table 'Hangfire_AggregatedCounter'...
+2019-04-28 16:46:05.412 +08:00 [INF] 2 servers were removed due to timeout
+2019-04-28 16:46:05.414 +08:00 [DBG] Background process 'Worker #7ed50d84' started.
+2019-04-28 16:46:05.424 +08:00 [DBG] Background process 'Worker #a8a936b3' started.
+2019-04-28 16:46:05.452 +08:00 [DBG] delete from `Hangfire_AggregatedCounter` where ExpireAt < @now limit @count;
+2019-04-28 16:46:05.457 +08:00 [DBG] Background process 'Worker #b8908702' started.
+2019-04-28 16:46:05.470 +08:00 [DBG] Background process 'Worker #675b4b7c' started.
+2019-04-28 16:46:05.483 +08:00 [DBG] Background process 'Worker #c31b68ae' started.
+2019-04-28 16:46:05.494 +08:00 [DBG] Background process 'Worker #3b2a1eae' started.
+2019-04-28 16:46:05.507 +08:00 [DBG] Background process 'Worker #710e7027' started.
+2019-04-28 16:46:05.516 +08:00 [DBG] removed records count=0
+2019-04-28 16:46:05.516 +08:00 [DBG] Removing outdated records from table 'Hangfire_Job'...
+2019-04-28 16:46:05.521 +08:00 [DBG] delete from `Hangfire_Job` where ExpireAt < @now limit @count;
+2019-04-28 16:46:05.522 +08:00 [DBG] Background process 'Worker #992ba4ff' started.
+2019-04-28 16:46:05.560 +08:00 [DBG] removed records count=0
+2019-04-28 16:46:05.560 +08:00 [DBG] Removing outdated records from table 'Hangfire_List'...
+2019-04-28 16:46:05.567 +08:00 [DBG] Background process 'Worker #4dd10eed' started.
+2019-04-28 16:46:05.567 +08:00 [DBG] delete from `Hangfire_List` where ExpireAt < @now limit @count;
+2019-04-28 16:46:05.568 +08:00 [DBG] Background process 'Worker #4942c1ec' started.
+2019-04-28 16:46:05.579 +08:00 [DBG] Background process 'Worker #2d0f6219' started.
+2019-04-28 16:46:05.585 +08:00 [DBG] removed records count=0
+2019-04-28 16:46:05.585 +08:00 [DBG] Removing outdated records from table 'Hangfire_Set'...
+2019-04-28 16:46:05.589 +08:00 [DBG] delete from `Hangfire_Set` where ExpireAt < @now limit @count;
+2019-04-28 16:46:05.591 +08:00 [DBG] Background process 'Worker #7fd6d398' started.
+2019-04-28 16:46:05.605 +08:00 [DBG] Background process 'Worker #c4f7c07e' started.
+2019-04-28 16:46:05.612 +08:00 [DBG] removed records count=0
+2019-04-28 16:46:05.612 +08:00 [DBG] Removing outdated records from table 'Hangfire_Hash'...
+2019-04-28 16:46:05.612 +08:00 [DBG] Background process 'Worker #586e7b7f' started.
+2019-04-28 16:46:05.619 +08:00 [DBG] delete from `Hangfire_Hash` where ExpireAt < @now limit @count;
+2019-04-28 16:46:05.651 +08:00 [DBG] Background process 'Worker #55beeb83' started.
+2019-04-28 16:46:05.702 +08:00 [DBG] removed records count=0
+2019-04-28 16:46:05.702 +08:00 [DBG] Background process 'Worker #3fad6924' started.
+2019-04-28 16:46:05.711 +08:00 [DBG] Background process 'Worker #7a8a1f1e' started.
+2019-04-28 16:46:05.724 +08:00 [DBG] Background process 'Worker #cf151209' started.
+2019-04-28 16:46:05.739 +08:00 [DBG] Background process 'Worker #d9c9d3a1' started.
+2019-04-28 16:46:05.757 +08:00 [DBG] Background process 'DelayedJobScheduler' started.
+2019-04-28 16:46:05.783 +08:00 [DBG] Background process 'RecurringJobScheduler' started.
+2019-04-28 16:46:07.546 +08:00 [INF] Starting Hangfire Server
+2019-04-28 16:46:07.546 +08:00 [INF] Using job storage: 'Server: Master@hangfire'
+2019-04-28 16:46:07.546 +08:00 [INF] Using the following options for SQL Server job storage:
+2019-04-28 16:46:07.546 +08:00 [INF]     Queue poll interval: 00:00:15.
+2019-04-28 16:46:07.546 +08:00 [INF] Using the following options for Hangfire Server:
+2019-04-28 16:46:07.546 +08:00 [INF]     Worker count: 2
+2019-04-28 16:46:07.546 +08:00 [INF]     Listening queues: 'default'
+2019-04-28 16:46:07.546 +08:00 [INF]     Shutdown timeout: 00:00:15
+2019-04-28 16:46:07.546 +08:00 [INF]     Schedule polling interval: 00:00:15
+2019-04-28 16:46:07.563 +08:00 [DBG] Background process 'BackgroundProcessingServer' started.
+2019-04-28 16:46:07.591 +08:00 [DBG] Background process 'ServerHeartbeat' started.
+2019-04-28 16:46:07.599 +08:00 [DBG] Background process 'ServerWatchdog' started.
+2019-04-28 16:46:07.608 +08:00 [DBG] Background process 'Hangfire.MySql.Core.ExpirationManager' started.
+2019-04-28 16:46:07.608 +08:00 [DBG] Removing outdated records from table 'Hangfire_AggregatedCounter'...
+2019-04-28 16:46:07.614 +08:00 [DBG] delete from `Hangfire_AggregatedCounter` where ExpireAt < @now limit @count;
+2019-04-28 16:46:07.617 +08:00 [DBG] Background process 'Hangfire.MySql.Core.CountersAggregator' started.
+2019-04-28 16:46:07.618 +08:00 [DBG] Aggregating records in 'Counter' table...
+2019-04-28 16:46:07.630 +08:00 [DBG] removed records count=0
+2019-04-28 16:46:07.628 +08:00 [DBG] Background process 'Worker #7e9dc241' started.
+2019-04-28 16:46:07.630 +08:00 [DBG] Removing outdated records from table 'Hangfire_Job'...
+2019-04-28 16:46:07.636 +08:00 [DBG] delete from `Hangfire_Job` where ExpireAt < @now limit @count;
+2019-04-28 16:46:07.640 +08:00 [DBG] Background process 'Worker #235ead64' started.
+2019-04-28 16:46:07.646 +08:00 [DBG] removed records count=0
+2019-04-28 16:46:07.646 +08:00 [DBG] Removing outdated records from table 'Hangfire_List'...
+2019-04-28 16:46:07.648 +08:00 [DBG] delete from `Hangfire_List` where ExpireAt < @now limit @count;
+2019-04-28 16:46:07.655 +08:00 [DBG] Background process 'DelayedJobScheduler' started.
+2019-04-28 16:46:07.661 +08:00 [DBG] removed records count=0
+2019-04-28 16:46:07.661 +08:00 [DBG] Removing outdated records from table 'Hangfire_Set'...
+2019-04-28 16:46:07.662 +08:00 [DBG] delete from `Hangfire_Set` where ExpireAt < @now limit @count;
+2019-04-28 16:46:07.670 +08:00 [DBG] Background process 'RecurringJobScheduler' started.
+2019-04-28 16:46:07.675 +08:00 [DBG] removed records count=0
+2019-04-28 16:46:07.675 +08:00 [DBG] Removing outdated records from table 'Hangfire_Hash'...
+2019-04-28 16:46:07.676 +08:00 [DBG] delete from `Hangfire_Hash` where ExpireAt < @now limit @count;
+2019-04-28 16:46:07.688 +08:00 [DBG] removed records count=0
+2019-04-28 16:46:08.169 +08:00 [INF] Initialized all modules.
+2019-04-28 16:46:08.453 +08:00 [INF] Request starting HTTP/1.1 DEBUG http://localhost:57992/  0
+2019-04-28 16:46:08.453 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:57992/  
+2019-04-28 16:46:08.494 +08:00 [INF] Request finished in 40.2472ms 200 
+2019-04-28 16:46:08.520 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-04-28 16:46:08.534 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported cultures '["zh-Hans-CN","zh-Hans"]'.
+2019-04-28 16:46:08.537 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported UI Cultures '["zh-Hans-CN","zh-Hans"]'.
+2019-04-28 16:46:08.718 +08:00 [INF] Route matched with {action = "Index", controller = "Home", area = ""}. Executing action SyncJob.Host.Controllers.HomeController.Index (SyncJob.Host)
+2019-04-28 16:46:08.811 +08:00 [INF] Executing action method SyncJob.Host.Controllers.HomeController.Index (SyncJob.Host) - Validation state: "Valid"
+2019-04-28 16:46:08.814 +08:00 [INF] Executed action method SyncJob.Host.Controllers.HomeController.Index (SyncJob.Host), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 0.2192ms.
+2019-04-28 16:46:08.820 +08:00 [INF] Executing RedirectResult, redirecting to /swagger.
+2019-04-28 16:46:08.823 +08:00 [INF] Executed action SyncJob.Host.Controllers.HomeController.Index (SyncJob.Host) in 102.6074ms
+2019-04-28 16:46:08.827 +08:00 [INF] Request finished in 376.4397ms 302 
+2019-04-28 16:46:08.829 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:57992/swagger/  
+2019-04-28 16:46:08.837 +08:00 [INF] Request finished in 7.9353ms 200 text/html
+2019-04-28 16:46:09.577 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:57992/swagger/swagger-ui-standalone-preset.js.map  
+2019-04-28 16:46:09.580 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-04-28 16:46:09.581 +08:00 [INF] Request finished in 4.0162ms 404 
+2019-04-28 16:46:09.638 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:57992/swagger/v1/swagger.json  
+2019-04-28 16:46:09.826 +08:00 [INF] Request finished in 187.971ms 200 application/json
+2019-04-28 16:46:53.009 +08:00 [INF] Starting web host.
+2019-04-28 16:46:58.613 +08:00 [INF] User profile is available. Using 'C:\Users\zhongduzhi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-04-28 16:46:58.705 +08:00 [INF] Loaded modules:
+2019-04-28 16:46:58.705 +08:00 [INF] - Volo.Abp.Castle.AbpCastleCoreModule
+2019-04-28 16:46:58.705 +08:00 [INF] - Volo.Abp.Autofac.AbpAutofacModule
+2019-04-28 16:46:58.705 +08:00 [INF] - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2019-04-28 16:46:58.705 +08:00 [INF] - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2019-04-28 16:46:58.705 +08:00 [INF] - Volo.Abp.Security.AbpSecurityModule
+2019-04-28 16:46:58.705 +08:00 [INF] - Volo.Abp.Data.AbpDataModule
+2019-04-28 16:46:58.705 +08:00 [INF] - Volo.Abp.MultiTenancy.AbpMultiTenancyModule
+2019-04-28 16:46:58.705 +08:00 [INF] - Volo.Abp.Settings.AbpSettingsModule
+2019-04-28 16:46:58.705 +08:00 [INF] - Volo.Abp.Localization.AbpLocalizationModule
+2019-04-28 16:46:58.705 +08:00 [INF] - SyncJob.DomainSharedModule
+2019-04-28 16:46:58.705 +08:00 [INF] - SyncJob.DomainModule
+2019-04-28 16:46:58.705 +08:00 [INF] - Volo.Abp.Timing.AbpTimingModule
+2019-04-28 16:46:58.705 +08:00 [INF] - Volo.Abp.Json.AbpJsonModule
+2019-04-28 16:46:58.705 +08:00 [INF] - Volo.Abp.Threading.AbpThreadingModule
+2019-04-28 16:46:58.705 +08:00 [INF] - Volo.Abp.Auditing.AbpAuditingModule
+2019-04-28 16:46:58.705 +08:00 [INF] - Volo.Abp.EventBus.AbpEventBusModule
+2019-04-28 16:46:58.705 +08:00 [INF] - Volo.Abp.Guids.AbpGuidsModule
+2019-04-28 16:46:58.705 +08:00 [INF] - Volo.Abp.Uow.AbpUnitOfWorkModule
+2019-04-28 16:46:58.705 +08:00 [INF] - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2019-04-28 16:46:58.705 +08:00 [INF] - Volo.Abp.Domain.AbpDddDomainModule
+2019-04-28 16:46:58.705 +08:00 [INF] - Volo.Abp.Validation.AbpValidationModule
+2019-04-28 16:46:58.705 +08:00 [INF] - Volo.Abp.Authorization.AbpAuthorizationModule
+2019-04-28 16:46:58.705 +08:00 [INF] - Volo.Abp.Http.AbpHttpAbstractionsModule
+2019-04-28 16:46:58.705 +08:00 [INF] - Volo.Abp.Features.AbpFeaturesModule
+2019-04-28 16:46:58.705 +08:00 [INF] - Volo.Abp.Application.AbpDddApplicationModule
+2019-04-28 16:46:58.705 +08:00 [INF] - SyncJob.ApplicationContractsModule
+2019-04-28 16:46:58.705 +08:00 [INF] - Volo.Abp.AutoMapper.AbpAutoMapperModule
+2019-04-28 16:46:58.705 +08:00 [INF] - SyncJob.ApplicationModule
+2019-04-28 16:46:58.705 +08:00 [INF] - Volo.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2019-04-28 16:46:58.705 +08:00 [INF] - SyncJob.EntityFrameworkCore.EFCoreModule
+2019-04-28 16:46:58.705 +08:00 [INF] - Volo.Abp.Http.AbpHttpModule
+2019-04-28 16:46:58.705 +08:00 [INF] - Volo.Abp.UI.AbpUiModule
+2019-04-28 16:46:58.705 +08:00 [INF] - Volo.Abp.AspNetCore.AbpAspNetCoreModule
+2019-04-28 16:46:58.705 +08:00 [INF] - Volo.Abp.ApiVersioning.AbpApiVersioningAbstractionsModule
+2019-04-28 16:46:58.705 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcContractsModule
+2019-04-28 16:46:58.705 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule
+2019-04-28 16:46:58.705 +08:00 [INF] - SyncJob.HttpApiModule
+2019-04-28 16:46:58.705 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainSharedModule
+2019-04-28 16:46:58.705 +08:00 [INF] - Volo.Abp.Serialization.AbpSerializationModule
+2019-04-28 16:46:58.705 +08:00 [INF] - Volo.Abp.Caching.AbpCachingModule
+2019-04-28 16:46:58.705 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainModule
+2019-04-28 16:46:58.705 +08:00 [INF] - Volo.Abp.PermissionManagement.EntityFrameworkCore.AbpPermissionManagementEntityFrameworkCoreModule
+2019-04-28 16:46:58.705 +08:00 [INF] - Volo.Abp.SettingManagement.AbpSettingManagementDomainSharedModule
+2019-04-28 16:46:58.705 +08:00 [INF] - Volo.Abp.SettingManagement.AbpSettingManagementDomainModule
+2019-04-28 16:46:58.705 +08:00 [INF] - Volo.Abp.SettingManagement.EntityFrameworkCore.AbpSettingManagementEntityFrameworkCoreModule
+2019-04-28 16:46:58.705 +08:00 [INF] - Volo.Abp.AuditLogging.AbpAuditLoggingDomainSharedModule
+2019-04-28 16:46:58.705 +08:00 [INF] - Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule
+2019-04-28 16:46:58.705 +08:00 [INF] - Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule
+2019-04-28 16:46:58.705 +08:00 [INF] - Volo.Abp.EntityFrameworkCore.MySQL.AbpEntityFrameworkCoreMySQLModule
+2019-04-28 16:46:58.705 +08:00 [INF] - Volo.Abp.BackgroundJobs.AbpBackgroundJobsAbstractionsModule
+2019-04-28 16:46:58.705 +08:00 [INF] - Volo.Abp.Hangfire.AbpHangfireModule
+2019-04-28 16:46:58.705 +08:00 [INF] - Volo.Abp.BackgroundJobs.Hangfire.AbpBackgroundJobsHangfireModule
+2019-04-28 16:46:58.705 +08:00 [INF] - SyncJob.Host.AppModule
+2019-04-28 16:46:58.746 +08:00 [DBG] No class found with auto mapping attributes.
+2019-04-28 16:46:59.110 +08:00 [INF] DB tables already exist. Exit install
+2019-04-28 16:46:59.127 +08:00 [INF] Starting Hangfire Server
+2019-04-28 16:46:59.130 +08:00 [INF] Using job storage: 'Server: Master@hangfire'
+2019-04-28 16:46:59.131 +08:00 [INF] Using the following options for SQL Server job storage:
+2019-04-28 16:46:59.131 +08:00 [INF]     Queue poll interval: 00:00:15.
+2019-04-28 16:46:59.131 +08:00 [INF] Using the following options for Hangfire Server:
+2019-04-28 16:46:59.131 +08:00 [INF]     Worker count: 20
+2019-04-28 16:46:59.131 +08:00 [INF]     Listening queues: 'default'
+2019-04-28 16:46:59.131 +08:00 [INF]     Shutdown timeout: 00:00:15
+2019-04-28 16:46:59.131 +08:00 [INF]     Schedule polling interval: 00:00:15
+2019-04-28 16:46:59.165 +08:00 [DBG] Background process 'BackgroundProcessingServer' started.
+2019-04-28 16:46:59.465 +08:00 [DBG] Background process 'ServerWatchdog' started.
+2019-04-28 16:46:59.465 +08:00 [DBG] Background process 'ServerHeartbeat' started.
+2019-04-28 16:46:59.473 +08:00 [DBG] Background process 'Hangfire.MySql.Core.ExpirationManager' started.
+2019-04-28 16:46:59.478 +08:00 [DBG] Background process 'Hangfire.MySql.Core.CountersAggregator' started.
+2019-04-28 16:46:59.512 +08:00 [DBG] Aggregating records in 'Counter' table...
+2019-04-28 16:46:59.512 +08:00 [DBG] Removing outdated records from table 'Hangfire_AggregatedCounter'...
+2019-04-28 16:46:59.518 +08:00 [DBG] Background process 'Worker #8ba50a9d' started.
+2019-04-28 16:46:59.560 +08:00 [DBG] delete from `Hangfire_AggregatedCounter` where ExpireAt < @now limit @count;
+2019-04-28 16:46:59.574 +08:00 [DBG] Background process 'Worker #abc37946' started.
+2019-04-28 16:46:59.605 +08:00 [DBG] Background process 'Worker #4cefc5f2' started.
+2019-04-28 16:46:59.633 +08:00 [DBG] Background process 'Worker #3a174d08' started.
+2019-04-28 16:46:59.643 +08:00 [DBG] Background process 'Worker #5d2b805d' started.
+2019-04-28 16:46:59.658 +08:00 [DBG] Background process 'Worker #f97d13d3' started.
+2019-04-28 16:46:59.693 +08:00 [DBG] Background process 'Worker #ae971b6a' started.
+2019-04-28 16:46:59.721 +08:00 [DBG] Background process 'Worker #59432066' started.
+2019-04-28 16:46:59.734 +08:00 [DBG] Background process 'Worker #c5df448b' started.
+2019-04-28 16:46:59.740 +08:00 [DBG] removed records count=0
+2019-04-28 16:46:59.740 +08:00 [DBG] Removing outdated records from table 'Hangfire_Job'...
+2019-04-28 16:46:59.742 +08:00 [DBG] delete from `Hangfire_Job` where ExpireAt < @now limit @count;
+2019-04-28 16:46:59.747 +08:00 [DBG] Background process 'Worker #144010fb' started.
+2019-04-28 16:46:59.762 +08:00 [DBG] removed records count=0
+2019-04-28 16:46:59.762 +08:00 [DBG] Removing outdated records from table 'Hangfire_List'...
+2019-04-28 16:46:59.783 +08:00 [DBG] Background process 'Worker #8029ee72' started.
+2019-04-28 16:46:59.784 +08:00 [DBG] delete from `Hangfire_List` where ExpireAt < @now limit @count;
+2019-04-28 16:46:59.805 +08:00 [DBG] Background process 'Worker #18a38c0d' started.
+2019-04-28 16:46:59.816 +08:00 [DBG] removed records count=0
+2019-04-28 16:46:59.816 +08:00 [DBG] Removing outdated records from table 'Hangfire_Set'...
+2019-04-28 16:46:59.817 +08:00 [DBG] Background process 'Worker #f2e9e376' started.
+2019-04-28 16:46:59.826 +08:00 [DBG] delete from `Hangfire_Set` where ExpireAt < @now limit @count;
+2019-04-28 16:46:59.832 +08:00 [DBG] Background process 'Worker #f13e00bd' started.
+2019-04-28 16:46:59.875 +08:00 [DBG] removed records count=0
+2019-04-28 16:46:59.875 +08:00 [DBG] Background process 'Worker #6f6cecc0' started.
+2019-04-28 16:46:59.902 +08:00 [DBG] Removing outdated records from table 'Hangfire_Hash'...
+2019-04-28 16:46:59.931 +08:00 [DBG] Background process 'Worker #8946bb9f' started.
+2019-04-28 16:46:59.931 +08:00 [DBG] delete from `Hangfire_Hash` where ExpireAt < @now limit @count;
+2019-04-28 16:46:59.938 +08:00 [DBG] Background process 'Worker #dfa74684' started.
+2019-04-28 16:46:59.952 +08:00 [DBG] Background process 'Worker #daddcc99' started.
+2019-04-28 16:46:59.952 +08:00 [DBG] removed records count=0
+2019-04-28 16:46:59.963 +08:00 [DBG] Background process 'Worker #13163480' started.
+2019-04-28 16:46:59.994 +08:00 [DBG] Background process 'Worker #1f61708a' started.
+2019-04-28 16:47:00.008 +08:00 [DBG] Background process 'DelayedJobScheduler' started.
+2019-04-28 16:47:00.018 +08:00 [DBG] Background process 'RecurringJobScheduler' started.
+2019-04-28 16:47:01.690 +08:00 [INF] Starting Hangfire Server
+2019-04-28 16:47:01.690 +08:00 [INF] Using job storage: 'Server: Master@hangfire'
+2019-04-28 16:47:01.690 +08:00 [INF] Using the following options for SQL Server job storage:
+2019-04-28 16:47:01.690 +08:00 [INF]     Queue poll interval: 00:00:15.
+2019-04-28 16:47:01.690 +08:00 [INF] Using the following options for Hangfire Server:
+2019-04-28 16:47:01.690 +08:00 [INF]     Worker count: 2
+2019-04-28 16:47:01.690 +08:00 [INF]     Listening queues: 'default'
+2019-04-28 16:47:01.690 +08:00 [INF]     Shutdown timeout: 00:00:15
+2019-04-28 16:47:01.690 +08:00 [INF]     Schedule polling interval: 00:00:15
+2019-04-28 16:47:01.701 +08:00 [DBG] Background process 'BackgroundProcessingServer' started.
+2019-04-28 16:47:01.720 +08:00 [DBG] Background process 'ServerHeartbeat' started.
+2019-04-28 16:47:01.726 +08:00 [DBG] Background process 'ServerWatchdog' started.
+2019-04-28 16:47:01.736 +08:00 [DBG] Background process 'Hangfire.MySql.Core.ExpirationManager' started.
+2019-04-28 16:47:01.736 +08:00 [DBG] Removing outdated records from table 'Hangfire_AggregatedCounter'...
+2019-04-28 16:47:01.742 +08:00 [DBG] delete from `Hangfire_AggregatedCounter` where ExpireAt < @now limit @count;
+2019-04-28 16:47:01.745 +08:00 [DBG] Background process 'Hangfire.MySql.Core.CountersAggregator' started.
+2019-04-28 16:47:01.747 +08:00 [DBG] Aggregating records in 'Counter' table...
+2019-04-28 16:47:01.757 +08:00 [DBG] removed records count=0
+2019-04-28 16:47:01.757 +08:00 [DBG] Removing outdated records from table 'Hangfire_Job'...
+2019-04-28 16:47:01.758 +08:00 [DBG] Background process 'Worker #38333b18' started.
+2019-04-28 16:47:01.759 +08:00 [DBG] delete from `Hangfire_Job` where ExpireAt < @now limit @count;
+2019-04-28 16:47:01.776 +08:00 [DBG] removed records count=0
+2019-04-28 16:47:01.776 +08:00 [DBG] Removing outdated records from table 'Hangfire_List'...
+2019-04-28 16:47:01.776 +08:00 [DBG] Background process 'Worker #a446a6ec' started.
+2019-04-28 16:47:01.779 +08:00 [DBG] Background process 'DelayedJobScheduler' started.
+2019-04-28 16:47:01.780 +08:00 [DBG] delete from `Hangfire_List` where ExpireAt < @now limit @count;
+2019-04-28 16:47:01.790 +08:00 [DBG] Background process 'RecurringJobScheduler' started.
+2019-04-28 16:47:01.793 +08:00 [DBG] removed records count=0
+2019-04-28 16:47:01.793 +08:00 [DBG] Removing outdated records from table 'Hangfire_Set'...
+2019-04-28 16:47:01.794 +08:00 [DBG] delete from `Hangfire_Set` where ExpireAt < @now limit @count;
+2019-04-28 16:47:01.803 +08:00 [DBG] removed records count=0
+2019-04-28 16:47:01.803 +08:00 [DBG] Removing outdated records from table 'Hangfire_Hash'...
+2019-04-28 16:47:01.803 +08:00 [DBG] delete from `Hangfire_Hash` where ExpireAt < @now limit @count;
+2019-04-28 16:47:01.829 +08:00 [DBG] removed records count=0
+2019-04-28 16:47:02.263 +08:00 [INF] Initialized all modules.
+2019-04-28 16:47:02.510 +08:00 [INF] Request starting HTTP/1.1 DEBUG http://localhost:57992/  0
+2019-04-28 16:47:02.510 +08:00 [INF] Request starting HTTP/1.1 DEBUG http://localhost:57992/  0
+2019-04-28 16:47:02.510 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:57992/  
+2019-04-28 16:47:02.555 +08:00 [INF] Request finished in 46.04ms 200 
+2019-04-28 16:47:02.555 +08:00 [INF] Request finished in 44.7334ms 200 
+2019-04-28 16:47:02.586 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-04-28 16:47:02.603 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported cultures '["zh-Hans-CN","zh-Hans"]'.
+2019-04-28 16:47:02.606 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported UI Cultures '["zh-Hans-CN","zh-Hans"]'.
+2019-04-28 16:47:02.827 +08:00 [INF] Route matched with {action = "Index", controller = "Home", area = ""}. Executing action SyncJob.Host.Controllers.HomeController.Index (SyncJob.Host)
+2019-04-28 16:47:02.918 +08:00 [INF] Executing action method SyncJob.Host.Controllers.HomeController.Index (SyncJob.Host) - Validation state: "Valid"
+2019-04-28 16:47:02.921 +08:00 [INF] Executed action method SyncJob.Host.Controllers.HomeController.Index (SyncJob.Host), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 0.2513ms.
+2019-04-28 16:47:02.927 +08:00 [INF] Executing RedirectResult, redirecting to /swagger.
+2019-04-28 16:47:02.929 +08:00 [INF] Executed action SyncJob.Host.Controllers.HomeController.Index (SyncJob.Host) in 100.15690000000001ms
+2019-04-28 16:47:02.933 +08:00 [INF] Request finished in 425.1492ms 302 
+2019-04-28 16:47:02.935 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:57992/swagger/  
+2019-04-28 16:47:02.942 +08:00 [INF] Request finished in 6.7205ms 200 text/html
+2019-04-28 16:47:03.647 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:57992/swagger/swagger-ui-standalone-preset.js.map  
+2019-04-28 16:47:03.651 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-04-28 16:47:03.652 +08:00 [INF] Request finished in 4.4587ms 404 
+2019-04-28 16:47:03.708 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:57992/swagger/v1/swagger.json  
+2019-04-28 16:47:03.869 +08:00 [INF] Request finished in 160.7595ms 200 application/json
+2019-04-28 16:47:55.863 +08:00 [INF] Starting web host.
+2019-04-28 16:48:01.423 +08:00 [INF] User profile is available. Using 'C:\Users\zhongduzhi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-04-28 16:48:01.514 +08:00 [INF] Loaded modules:
+2019-04-28 16:48:01.514 +08:00 [INF] - Volo.Abp.Castle.AbpCastleCoreModule
+2019-04-28 16:48:01.514 +08:00 [INF] - Volo.Abp.Autofac.AbpAutofacModule
+2019-04-28 16:48:01.514 +08:00 [INF] - Volo.Abp.VirtualFileSystem.AbpVirtualFileSystemModule
+2019-04-28 16:48:01.514 +08:00 [INF] - Volo.Abp.Localization.AbpLocalizationAbstractionsModule
+2019-04-28 16:48:01.514 +08:00 [INF] - Volo.Abp.Security.AbpSecurityModule
+2019-04-28 16:48:01.514 +08:00 [INF] - Volo.Abp.Data.AbpDataModule
+2019-04-28 16:48:01.514 +08:00 [INF] - Volo.Abp.MultiTenancy.AbpMultiTenancyModule
+2019-04-28 16:48:01.514 +08:00 [INF] - Volo.Abp.Settings.AbpSettingsModule
+2019-04-28 16:48:01.514 +08:00 [INF] - Volo.Abp.Localization.AbpLocalizationModule
+2019-04-28 16:48:01.514 +08:00 [INF] - SyncJob.DomainSharedModule
+2019-04-28 16:48:01.514 +08:00 [INF] - SyncJob.DomainModule
+2019-04-28 16:48:01.514 +08:00 [INF] - Volo.Abp.Timing.AbpTimingModule
+2019-04-28 16:48:01.514 +08:00 [INF] - Volo.Abp.Json.AbpJsonModule
+2019-04-28 16:48:01.514 +08:00 [INF] - Volo.Abp.Threading.AbpThreadingModule
+2019-04-28 16:48:01.514 +08:00 [INF] - Volo.Abp.Auditing.AbpAuditingModule
+2019-04-28 16:48:01.514 +08:00 [INF] - Volo.Abp.EventBus.AbpEventBusModule
+2019-04-28 16:48:01.514 +08:00 [INF] - Volo.Abp.Guids.AbpGuidsModule
+2019-04-28 16:48:01.514 +08:00 [INF] - Volo.Abp.Uow.AbpUnitOfWorkModule
+2019-04-28 16:48:01.514 +08:00 [INF] - Volo.Abp.ObjectMapping.AbpObjectMappingModule
+2019-04-28 16:48:01.514 +08:00 [INF] - Volo.Abp.Domain.AbpDddDomainModule
+2019-04-28 16:48:01.514 +08:00 [INF] - Volo.Abp.Validation.AbpValidationModule
+2019-04-28 16:48:01.514 +08:00 [INF] - Volo.Abp.Authorization.AbpAuthorizationModule
+2019-04-28 16:48:01.514 +08:00 [INF] - Volo.Abp.Http.AbpHttpAbstractionsModule
+2019-04-28 16:48:01.514 +08:00 [INF] - Volo.Abp.Features.AbpFeaturesModule
+2019-04-28 16:48:01.514 +08:00 [INF] - Volo.Abp.Application.AbpDddApplicationModule
+2019-04-28 16:48:01.514 +08:00 [INF] - SyncJob.ApplicationContractsModule
+2019-04-28 16:48:01.514 +08:00 [INF] - Volo.Abp.AutoMapper.AbpAutoMapperModule
+2019-04-28 16:48:01.514 +08:00 [INF] - SyncJob.ApplicationModule
+2019-04-28 16:48:01.514 +08:00 [INF] - Volo.Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule
+2019-04-28 16:48:01.514 +08:00 [INF] - SyncJob.EntityFrameworkCore.EFCoreModule
+2019-04-28 16:48:01.514 +08:00 [INF] - Volo.Abp.Http.AbpHttpModule
+2019-04-28 16:48:01.514 +08:00 [INF] - Volo.Abp.UI.AbpUiModule
+2019-04-28 16:48:01.514 +08:00 [INF] - Volo.Abp.AspNetCore.AbpAspNetCoreModule
+2019-04-28 16:48:01.514 +08:00 [INF] - Volo.Abp.ApiVersioning.AbpApiVersioningAbstractionsModule
+2019-04-28 16:48:01.514 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcContractsModule
+2019-04-28 16:48:01.514 +08:00 [INF] - Volo.Abp.AspNetCore.Mvc.AbpAspNetCoreMvcModule
+2019-04-28 16:48:01.514 +08:00 [INF] - SyncJob.HttpApiModule
+2019-04-28 16:48:01.514 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainSharedModule
+2019-04-28 16:48:01.514 +08:00 [INF] - Volo.Abp.Serialization.AbpSerializationModule
+2019-04-28 16:48:01.514 +08:00 [INF] - Volo.Abp.Caching.AbpCachingModule
+2019-04-28 16:48:01.514 +08:00 [INF] - Volo.Abp.PermissionManagement.AbpPermissionManagementDomainModule
+2019-04-28 16:48:01.514 +08:00 [INF] - Volo.Abp.PermissionManagement.EntityFrameworkCore.AbpPermissionManagementEntityFrameworkCoreModule
+2019-04-28 16:48:01.514 +08:00 [INF] - Volo.Abp.SettingManagement.AbpSettingManagementDomainSharedModule
+2019-04-28 16:48:01.514 +08:00 [INF] - Volo.Abp.SettingManagement.AbpSettingManagementDomainModule
+2019-04-28 16:48:01.514 +08:00 [INF] - Volo.Abp.SettingManagement.EntityFrameworkCore.AbpSettingManagementEntityFrameworkCoreModule
+2019-04-28 16:48:01.514 +08:00 [INF] - Volo.Abp.AuditLogging.AbpAuditLoggingDomainSharedModule
+2019-04-28 16:48:01.514 +08:00 [INF] - Volo.Abp.AuditLogging.AbpAuditLoggingDomainModule
+2019-04-28 16:48:01.514 +08:00 [INF] - Volo.Abp.AuditLogging.EntityFrameworkCore.AbpAuditLoggingEntityFrameworkCoreModule
+2019-04-28 16:48:01.514 +08:00 [INF] - Volo.Abp.EntityFrameworkCore.MySQL.AbpEntityFrameworkCoreMySQLModule
+2019-04-28 16:48:01.514 +08:00 [INF] - Volo.Abp.BackgroundJobs.AbpBackgroundJobsAbstractionsModule
+2019-04-28 16:48:01.514 +08:00 [INF] - Volo.Abp.Hangfire.AbpHangfireModule
+2019-04-28 16:48:01.514 +08:00 [INF] - Volo.Abp.BackgroundJobs.Hangfire.AbpBackgroundJobsHangfireModule
+2019-04-28 16:48:01.514 +08:00 [INF] - SyncJob.Host.AppModule
+2019-04-28 16:48:01.557 +08:00 [DBG] No class found with auto mapping attributes.
+2019-04-28 16:48:01.915 +08:00 [INF] DB tables already exist. Exit install
+2019-04-28 16:48:01.933 +08:00 [INF] Starting Hangfire Server
+2019-04-28 16:48:01.936 +08:00 [INF] Using job storage: 'Server: Master@hangfire'
+2019-04-28 16:48:01.936 +08:00 [INF] Using the following options for SQL Server job storage:
+2019-04-28 16:48:01.936 +08:00 [INF]     Queue poll interval: 00:00:15.
+2019-04-28 16:48:01.936 +08:00 [INF] Using the following options for Hangfire Server:
+2019-04-28 16:48:01.936 +08:00 [INF]     Worker count: 20
+2019-04-28 16:48:01.936 +08:00 [INF]     Listening queues: 'default'
+2019-04-28 16:48:01.936 +08:00 [INF]     Shutdown timeout: 00:00:15
+2019-04-28 16:48:01.937 +08:00 [INF]     Schedule polling interval: 00:00:15
+2019-04-28 16:48:01.968 +08:00 [DBG] Background process 'BackgroundProcessingServer' started.
+2019-04-28 16:48:02.242 +08:00 [DBG] Background process 'ServerWatchdog' started.
+2019-04-28 16:48:02.246 +08:00 [DBG] Background process 'ServerHeartbeat' started.
+2019-04-28 16:48:02.252 +08:00 [DBG] Background process 'Hangfire.MySql.Core.ExpirationManager' started.
+2019-04-28 16:48:02.258 +08:00 [DBG] Removing outdated records from table 'Hangfire_AggregatedCounter'...
+2019-04-28 16:48:02.264 +08:00 [DBG] Background process 'Hangfire.MySql.Core.CountersAggregator' started.
+2019-04-28 16:48:02.270 +08:00 [DBG] delete from `Hangfire_AggregatedCounter` where ExpireAt < @now limit @count;
+2019-04-28 16:48:02.275 +08:00 [DBG] Background process 'Worker #8dc618b5' started.
+2019-04-28 16:48:02.282 +08:00 [DBG] Aggregating records in 'Counter' table...
+2019-04-28 16:48:02.286 +08:00 [DBG] Background process 'Worker #349d7f43' started.
+2019-04-28 16:48:02.297 +08:00 [DBG] Background process 'Worker #742d12d5' started.
+2019-04-28 16:48:02.309 +08:00 [DBG] Background process 'Worker #2c6fbd56' started.
+2019-04-28 16:48:02.323 +08:00 [DBG] Background process 'Worker #34f1fa48' started.
+2019-04-28 16:48:02.336 +08:00 [DBG] Background process 'Worker #4f36ffb4' started.
+2019-04-28 16:48:02.342 +08:00 [DBG] removed records count=0
+2019-04-28 16:48:02.342 +08:00 [DBG] Removing outdated records from table 'Hangfire_Job'...
+2019-04-28 16:48:02.344 +08:00 [DBG] delete from `Hangfire_Job` where ExpireAt < @now limit @count;
+2019-04-28 16:48:02.362 +08:00 [DBG] Background process 'Worker #a353130b' started.
+2019-04-28 16:48:02.374 +08:00 [DBG] removed records count=0
+2019-04-28 16:48:02.374 +08:00 [DBG] Removing outdated records from table 'Hangfire_List'...
+2019-04-28 16:48:02.375 +08:00 [DBG] Background process 'Worker #2e21d3e0' started.
+2019-04-28 16:48:02.375 +08:00 [DBG] delete from `Hangfire_List` where ExpireAt < @now limit @count;
+2019-04-28 16:48:02.451 +08:00 [DBG] removed records count=0
+2019-04-28 16:48:02.452 +08:00 [DBG] Removing outdated records from table 'Hangfire_Set'...
+2019-04-28 16:48:02.455 +08:00 [DBG] delete from `Hangfire_Set` where ExpireAt < @now limit @count;
+2019-04-28 16:48:02.456 +08:00 [DBG] Background process 'Worker #07f691a6' started.
+2019-04-28 16:48:02.469 +08:00 [DBG] Background process 'Worker #3d5f0c0c' started.
+2019-04-28 16:48:02.474 +08:00 [DBG] removed records count=0
+2019-04-28 16:48:02.474 +08:00 [DBG] Removing outdated records from table 'Hangfire_Hash'...
+2019-04-28 16:48:02.481 +08:00 [DBG] delete from `Hangfire_Hash` where ExpireAt < @now limit @count;
+2019-04-28 16:48:02.481 +08:00 [DBG] Background process 'Worker #f18d2841' started.
+2019-04-28 16:48:02.511 +08:00 [DBG] Background process 'Worker #3af89397' started.
+2019-04-28 16:48:02.533 +08:00 [DBG] removed records count=0
+2019-04-28 16:48:02.544 +08:00 [DBG] Background process 'Worker #0293642d' started.
+2019-04-28 16:48:02.573 +08:00 [DBG] Background process 'Worker #2e5bbb3d' started.
+2019-04-28 16:48:02.584 +08:00 [DBG] Background process 'Worker #cef0c018' started.
+2019-04-28 16:48:02.598 +08:00 [DBG] Background process 'Worker #5b7be63a' started.
+2019-04-28 16:48:02.605 +08:00 [DBG] Background process 'Worker #d98ba7cf' started.
+2019-04-28 16:48:02.625 +08:00 [DBG] Background process 'Worker #8f3e51dd' started.
+2019-04-28 16:48:02.629 +08:00 [DBG] Background process 'Worker #2aa68b35' started.
+2019-04-28 16:48:02.697 +08:00 [DBG] Background process 'Worker #cf4ec44e' started.
+2019-04-28 16:48:02.709 +08:00 [DBG] Background process 'DelayedJobScheduler' started.
+2019-04-28 16:48:02.722 +08:00 [DBG] Background process 'RecurringJobScheduler' started.
+2019-04-28 16:48:04.377 +08:00 [INF] Starting Hangfire Server
+2019-04-28 16:48:04.377 +08:00 [INF] Using job storage: 'Server: Master@hangfire'
+2019-04-28 16:48:04.377 +08:00 [INF] Using the following options for SQL Server job storage:
+2019-04-28 16:48:04.377 +08:00 [INF]     Queue poll interval: 00:00:15.
+2019-04-28 16:48:04.377 +08:00 [INF] Using the following options for Hangfire Server:
+2019-04-28 16:48:04.377 +08:00 [INF]     Worker count: 2
+2019-04-28 16:48:04.377 +08:00 [INF]     Listening queues: 'default'
+2019-04-28 16:48:04.377 +08:00 [INF]     Shutdown timeout: 00:00:15
+2019-04-28 16:48:04.377 +08:00 [INF]     Schedule polling interval: 00:00:15
+2019-04-28 16:48:04.395 +08:00 [DBG] Background process 'BackgroundProcessingServer' started.
+2019-04-28 16:48:04.434 +08:00 [DBG] Background process 'ServerHeartbeat' started.
+2019-04-28 16:48:04.438 +08:00 [DBG] Background process 'ServerWatchdog' started.
+2019-04-28 16:48:04.449 +08:00 [DBG] Background process 'Hangfire.MySql.Core.ExpirationManager' started.
+2019-04-28 16:48:04.449 +08:00 [DBG] Removing outdated records from table 'Hangfire_AggregatedCounter'...
+2019-04-28 16:48:04.455 +08:00 [DBG] delete from `Hangfire_AggregatedCounter` where ExpireAt < @now limit @count;
+2019-04-28 16:48:04.460 +08:00 [DBG] Background process 'Hangfire.MySql.Core.CountersAggregator' started.
+2019-04-28 16:48:04.488 +08:00 [DBG] Aggregating records in 'Counter' table...
+2019-04-28 16:48:04.488 +08:00 [DBG] removed records count=0
+2019-04-28 16:48:04.489 +08:00 [DBG] Removing outdated records from table 'Hangfire_Job'...
+2019-04-28 16:48:04.495 +08:00 [DBG] Background process 'Worker #9c4d6469' started.
+2019-04-28 16:48:04.495 +08:00 [DBG] delete from `Hangfire_Job` where ExpireAt < @now limit @count;
+2019-04-28 16:48:04.495 +08:00 [DBG] Background process 'Worker #9d0bf28a' started.
+2019-04-28 16:48:04.514 +08:00 [DBG] removed records count=0
+2019-04-28 16:48:04.514 +08:00 [DBG] Background process 'DelayedJobScheduler' started.
+2019-04-28 16:48:04.514 +08:00 [DBG] Removing outdated records from table 'Hangfire_List'...
+2019-04-28 16:48:04.518 +08:00 [DBG] Background process 'RecurringJobScheduler' started.
+2019-04-28 16:48:04.518 +08:00 [DBG] delete from `Hangfire_List` where ExpireAt < @now limit @count;
+2019-04-28 16:48:04.562 +08:00 [DBG] removed records count=0
+2019-04-28 16:48:04.562 +08:00 [DBG] Removing outdated records from table 'Hangfire_Set'...
+2019-04-28 16:48:04.566 +08:00 [DBG] delete from `Hangfire_Set` where ExpireAt < @now limit @count;
+2019-04-28 16:48:04.590 +08:00 [DBG] removed records count=0
+2019-04-28 16:48:04.590 +08:00 [DBG] Removing outdated records from table 'Hangfire_Hash'...
+2019-04-28 16:48:04.595 +08:00 [DBG] delete from `Hangfire_Hash` where ExpireAt < @now limit @count;
+2019-04-28 16:48:04.602 +08:00 [DBG] removed records count=0
+2019-04-28 16:48:04.982 +08:00 [INF] Initialized all modules.
+2019-04-28 16:48:05.375 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:57992/  
+2019-04-28 16:48:05.375 +08:00 [INF] Request starting HTTP/1.1 DEBUG http://localhost:57992/  0
+2019-04-28 16:48:05.414 +08:00 [INF] Request finished in 38.8902ms 200 
+2019-04-28 16:48:05.441 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-04-28 16:48:05.457 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported cultures '["zh-Hans-CN","zh-Hans"]'.
+2019-04-28 16:48:05.459 +08:00 [WRN] AcceptLanguageHeaderRequestCultureProvider returned the following unsupported UI Cultures '["zh-Hans-CN","zh-Hans"]'.
+2019-04-28 16:48:05.664 +08:00 [INF] Route matched with {action = "Index", controller = "Home", area = ""}. Executing action SyncJob.Host.Controllers.HomeController.Index (SyncJob.Host)
+2019-04-28 16:48:05.754 +08:00 [INF] Executing action method SyncJob.Host.Controllers.HomeController.Index (SyncJob.Host) - Validation state: "Valid"
+2019-04-28 16:48:05.757 +08:00 [INF] Executed action method SyncJob.Host.Controllers.HomeController.Index (SyncJob.Host), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 0.2114ms.
+2019-04-28 16:48:05.762 +08:00 [INF] Executing RedirectResult, redirecting to /swagger.
+2019-04-28 16:48:05.765 +08:00 [INF] Executed action SyncJob.Host.Controllers.HomeController.Index (SyncJob.Host) in 98.846600000000009ms
+2019-04-28 16:48:05.768 +08:00 [INF] Request finished in 395.3127ms 302 
+2019-04-28 16:48:05.778 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:57992/swagger/  
+2019-04-28 16:48:05.785 +08:00 [INF] Request finished in 7.3624ms 200 text/html
+2019-04-28 16:48:06.480 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:57992/swagger/swagger-ui-standalone-preset.js.map  
+2019-04-28 16:48:06.483 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-04-28 16:48:06.484 +08:00 [INF] Request finished in 4.0933ms 404 
+2019-04-28 16:48:06.538 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:57992/swagger/v1/swagger.json  
+2019-04-28 16:48:06.692 +08:00 [INF] Request finished in 154.2057ms 200 application/json
