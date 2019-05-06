@@ -18110,3 +18110,7 @@ Object name: 'HttpResponseStream'.
    at Microsoft.Extensions.RazorViews.BaseView.ExecuteAsync(HttpContext context)
    at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
 2019-05-06 14:00:11.788 +08:00 [INF] Request finished in 28.4573ms 500 
+2019-05-06 14:06:47.872 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:57992/  
+2019-05-06 14:06:47.892 +08:00 [INF] Request finished in 19.4779ms 500 text/html; charset=utf-8
+2019-05-06 14:06:48.179 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:57992/favicon.ico  
+2019-05-06 14:06:48.200 +08:00 [INF] Request finished in 21.3813ms 500 text/html; charset=utf-8
