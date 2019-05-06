@@ -5,6 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Hangfire.Console" Version="1.4.2" />
+    <PackageReference Include="Hangfire.Core" Version="1.7.2" />
     <PackageReference Include="Hangfire.MySql.Core" Version="2.2.2" />
     <PackageReference Include="Microsoft.AspNetCore.App" Version="2.2.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.0" />
@@ -16,10 +18,13 @@
     <PackageReference Include="Volo.Abp.BackgroundJobs.Abstractions" Version="0.16.0" />
     <PackageReference Include="Volo.Abp.BackgroundJobs.HangFire" Version="0.16.0" />
     <PackageReference Include="Volo.Abp.EntityFrameworkCore.MySQL" Version="0.16.0" />
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore.SqlServer" Version="0.17.0" />
     <PackageReference Include="Volo.Abp.HangFire" Version="0.16.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\Hangfire.RecurringJobExtensions\Hangfire.RecurringJobExtensions.csproj" />
+    <ProjectReference Include="..\..\src\Hangfire.Samples\Hangfire.Samples.csproj" />
     <ProjectReference Include="..\..\src\SyncJob.HttpApi\SyncJob.HttpApi.csproj" />
     <ProjectReference Include="..\..\src\SyncJob.Application\SyncJob.Application.csproj" />
     <ProjectReference Include="..\..\src\SyncJob.EntityFrameworkCore\SyncJob.EntityFrameworkCore.csproj" />
@@ -32,12 +37,16 @@
   <ItemGroup>
     <Compile Remove="Logs\**" />
     <Compile Remove="Migrations\**" />
+    <Compile Remove="Samples\**" />
     <Content Remove="Logs\**" />
     <Content Remove="Migrations\**" />
+    <Content Remove="Samples\**" />
     <EmbeddedResource Remove="Logs\**" />
     <EmbeddedResource Remove="Migrations\**" />
+    <EmbeddedResource Remove="Samples\**" />
     <None Remove="Logs\**" />
     <None Remove="Migrations\**" />
+    <None Remove="Samples\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -47,6 +56,15 @@
 
   <ItemGroup>
     <None Remove="_CreateSqlServerCacheDatabase.bat" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="recurringjob - 复制.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="recurringjob.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

@@ -23,6 +23,9 @@ using Hangfire.MySql.Core;
 using Volo.Abp.BackgroundJobs;
 using Volo.Abp.BackgroundJobs.Hangfire;
 using Volo.Abp.AspNetCore.Mvc;
+using Hangfire.RecurringJobExtensions;
+using Hangfire.Console;
+using Hangfire.Samples;
 
 namespace SyncJob.Host
 {
@@ -49,11 +52,13 @@ namespace SyncJob.Host
             Configure<DbConnectionOptions>(options =>
             {
                 options.ConnectionStrings.Default = configuration.GetConnectionString("Hangfire");
+                options.ConnectionStrings.Add("KDS3", configuration.GetConnectionString("SourceDB"));
+                options.ConnectionStrings.Add("DW", configuration.GetConnectionString("TargetDB"));
             });
 
             Configure<AbpDbContextOptions>(options =>
             {
-                //options.UseSqlServer();
+                options.UseSqlServer();
                 options.UseMySQL();
 
             });
@@ -116,7 +121,10 @@ namespace SyncJob.Host
             {
                 //config.UseSqlServerStorage(Configuration.GetConnectionString("Default"));
                 config.UseStorage(new MySqlStorage(configuration.GetConnectionString("Hangfire"), new MySqlStorageOptions() { TablePrefix = "Hangfire" }));
-             
+                config.UseConsole();
+                config.UseRecurringJob("recurringjob.json");
+                //config.UseRecurringJob(typeof(RecurringJobService));
+                //config.UseDefaultActivator();
             });
 
  
@@ -150,24 +158,25 @@ namespace SyncJob.Host
             app.UseAbpRequestLocalization();
             app.UseAuditing();
 
-
+         
             //启动Hangfire服务
             app.UseHangfireServer(new BackgroundJobServerOptions
             {
                 WorkerCount = 2
             });
             //启动hangfire面板
-            app.UseHangfireDashboard();
+            //app.UseHangfireDashboard();
             //backgroundJobs.Enqueue(() => Console.WriteLine("Hello world from Hangfire!"));
-            //app.UseHangfireDashboard("/hangfire", new DashboardOptions
-            //{
-            //    Authorization = new[] {
-            //        new AbpHangfireAuthorizationFilter()
-            //        //,new AbpHangfireAuthorizationFilter("HangFireDashboardPermissionName")
-            //    }
-            //});
+            BackgroundJob.Enqueue(() => Job.CancellExecute(JobCancellationToken.Null));
+            app.UseHangfireDashboard("/hangfire", new DashboardOptions
+            {
+                //Authorization = new[] {
+                //    new AuthorizationFilter() 
+                //    //new AbpHangfireAuthorizationFilter()
+                //    //,new AbpHangfireAuthorizationFilter("HangFireDashboardPermissionName")
+                //}
+            });
 
-            
             app.UseMvcWithDefaultRoute();
         }
 

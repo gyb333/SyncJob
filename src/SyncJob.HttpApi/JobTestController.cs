@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Volo.Abp;
 using Volo.Abp.AspNetCore.Mvc;
 
-namespace SyncJob.Abp
+namespace SyncJob
 {
     
     [RemoteService]
@@ -19,6 +19,8 @@ namespace SyncJob.Abp
     //[Authorize]
     public class JobTestController : AbpController
     {
+
+     
 
         [HttpGet]
         [Route("Enqueue")]
@@ -58,6 +60,7 @@ namespace SyncJob.Abp
             BackgroundJob.Enqueue(() => LongRunningMethod(JobCancellationToken.Null));
         }
 
+        [AutomaticRetry(Attempts = 3)]
         private void LongRunningMethod(IJobCancellationToken cancellationToken)
         {
             for (var i = 0; i < Int32.MaxValue; i++)

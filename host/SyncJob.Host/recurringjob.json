@@ -1,0 +1,13 @@
+﻿[
+  {
+    "job-name": "My Job1",
+    "job-type": "Hangfire.Samples.MyJob1, Hangfire.Samples ",
+    "cron-expression": "*/10 * * * *",
+    "queue": "jobs"
+  },
+  {
+    "job-name": "job",
+    "job-type": "Hangfire.Samples.Job, Hangfire.Samples ",
+    "cron-expression": "*/10 * * * *"
+  }
+]
