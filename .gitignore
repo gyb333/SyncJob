@@ -257,3 +257,4 @@ paket-files/
 #src/SyncJob.Web/Logs/logs.txt
 
 */*/Logs
+host/SyncJob.Host/Logs/logs.txt
