@@ -26,6 +26,7 @@ using Volo.Abp.AspNetCore.Mvc;
 using Hangfire.RecurringJobExtensions;
 using Hangfire.Console;
 using Hangfire.Samples;
+using Volo.Abp.EntityFrameworkCore.SqlServer;
 
 namespace SyncJob.Host
 {
@@ -37,7 +38,7 @@ namespace SyncJob.Host
         typeof(AbpPermissionManagementEntityFrameworkCoreModule),
         typeof(AbpSettingManagementEntityFrameworkCoreModule),
         typeof(AbpAuditLoggingEntityFrameworkCoreModule),
-        //typeof(AbpEntityFrameworkCoreSqlServerModule)
+        typeof(AbpEntityFrameworkCoreSqlServerModule),
         typeof(AbpEntityFrameworkCoreMySQLModule)
         //, typeof(AbpBackgroundJobsModule)
         , typeof(AbpBackgroundJobsHangfireModule)
@@ -52,14 +53,16 @@ namespace SyncJob.Host
             Configure<DbConnectionOptions>(options =>
             {
                 options.ConnectionStrings.Default = configuration.GetConnectionString("Hangfire");
-                options.ConnectionStrings.Add("KDS3", configuration.GetConnectionString("SourceDB"));
-                options.ConnectionStrings.Add("DW", configuration.GetConnectionString("TargetDB"));
+                //options.ConnectionStrings.Add("SourceDb", configuration.GetConnectionString("SourceDb"));
+                //options.ConnectionStrings.Add("TargetDb", configuration.GetConnectionString("TargetDb"));
             });
 
             Configure<AbpDbContextOptions>(options =>
             {
-                options.UseSqlServer();
+               
                 options.UseMySQL();
+                options.UseMySQL<SourceDbContext>();
+                options.UseSqlServer<TargetDbContext>();
 
             });
 

@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using DTOs;
+using Entitys;
 
 namespace SyncJob
 {
@@ -6,7 +8,13 @@ namespace SyncJob
     {
         public AutoMapperProfile()
         {
-            
+            CreateMap<Book, BookDto>();
+            CreateMap<BookDto, CreateUpdateBookDto>();
+            //CreateMap<CreateUpdateBookDto, Book > ()
+              
+                
+                ;
+
         }
     }
 }
