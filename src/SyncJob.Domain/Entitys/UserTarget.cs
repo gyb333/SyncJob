@@ -8,7 +8,7 @@ using Volo.Abp.Domain.Entities;
 namespace Entitys
 {
     [Table("User")]
-    public class User : Entity
+    public class UserTarget : EntityBase
     {
         public int UserID { get; set; }
 
@@ -26,7 +26,7 @@ namespace Entitys
 
         public int? PromoterID { get; set; }
 
-        public bool? IsValid { get; set; }
+        public bool? IsDisabled { get; set; }
 
         public override object[] GetKeys()
         {

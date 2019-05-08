@@ -12,7 +12,7 @@ namespace SyncJob.Host
             var configuration = BuildConfiguration();
 
             var builder = new DbContextOptionsBuilder<DemoAppDbContext>()
-                .UseSqlServer(configuration.GetConnectionString("Default"));
+                .UseSqlServer(configuration.GetConnectionString("TargetDb"));
 
             return new DemoAppDbContext(builder.Options);
         }

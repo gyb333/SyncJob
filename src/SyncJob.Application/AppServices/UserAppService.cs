@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Volo.Abp.Application.Services;
 using Volo.Abp.Domain.Repositories;
+using Volo.Abp.ObjectMapping;
 
 namespace AppServices
 {
@@ -15,26 +16,33 @@ namespace AppServices
     {
         private readonly IUserRepository _userReposity;
         private readonly IUserManager _userManager;
+ 
+        private readonly IRepository<UserTarget> _repositoryUser;
 
-        private readonly IRepository<Book> _repositoryBook;
-
-
-       public UserAppService(IUserRepository userReposity, IUserManager userManager, IRepository<Book> repositoryBook)
+        public UserAppService(IUserRepository userReposity, IUserManager userManager,  IRepository<UserTarget> repositoryUser)
         {
             _userReposity = userReposity;
             _userManager = userManager;
-            _repositoryBook = repositoryBook;
+  
+            _repositoryUser= repositoryUser;
 
-        }
+    }
         public async Task<List<User>> GetUsers()
         {
             return await _userManager.GetUsers();
         }
 
 
-        public async Task<List<Book>> GetBooksDW()
+      
+
+        public async void ExecUser()
         {
-            return await _repositoryBook.GetListAsync();
+            var users = await _userReposity.GetListAsync();
+            var userList = ObjectMapper.Map<List<User>, List<UserTarget>>(users);
+
+            
         }
+
+
     }
 }

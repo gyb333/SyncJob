@@ -34,7 +34,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleClient", "host\Conso
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hangfire.RecurringJobExtensions", "src\Hangfire.RecurringJobExtensions\Hangfire.RecurringJobExtensions.csproj", "{7C171B9E-69E0-4301-975C-6E7356F9E8A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hangfire.Samples", "src\Hangfire.Samples\Hangfire.Samples.csproj", "{B4852FBD-1C13-4A41-82A7-29CA3EFB562F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hangfire.Samples", "src\Hangfire.Samples\Hangfire.Samples.csproj", "{B4852FBD-1C13-4A41-82A7-29CA3EFB562F}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Database", "Database\Database.sqlproj", "{26C145A1-C18F-4ADD-A118-801E5B0C7FF2}"
 EndProject

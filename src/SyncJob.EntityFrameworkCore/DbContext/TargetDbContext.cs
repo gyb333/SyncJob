@@ -29,11 +29,17 @@ namespace SyncJob.EntityFrameworkCore
 
         }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            //optionsBuilder.UseSqlServer(@"Server=.\SQLExpress;Database=SchoolDB;Trusted_Connection=True;");
+            base.OnConfiguring(optionsBuilder);
+        }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
 
-            builder.ConfigureSyncJob(options =>
+            builder.ConfigureTargetDb(options =>
             {
                 options.TablePrefix = TablePrefix;
                 options.Schema = Schema;

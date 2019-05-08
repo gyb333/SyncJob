@@ -23,7 +23,7 @@ namespace SyncJob.Host
             modelBuilder.ConfigureSettingManagement();
             modelBuilder.ConfigureAuditLogging();
 
-            modelBuilder.ConfigureSyncJob();
+            modelBuilder.ConfigureTargetDb();
         }
     }
 }

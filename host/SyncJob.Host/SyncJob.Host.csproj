@@ -36,22 +36,13 @@
 
   <ItemGroup>
     <Compile Remove="Logs\**" />
-    <Compile Remove="Migrations\**" />
     <Compile Remove="Samples\**" />
     <Content Remove="Logs\**" />
-    <Content Remove="Migrations\**" />
     <Content Remove="Samples\**" />
     <EmbeddedResource Remove="Logs\**" />
-    <EmbeddedResource Remove="Migrations\**" />
     <EmbeddedResource Remove="Samples\**" />
     <None Remove="Logs\**" />
-    <None Remove="Migrations\**" />
     <None Remove="Samples\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Remove="DemoAppDbContext.cs" />
-    <Compile Remove="DemoAppDbContextFactory.cs" />
   </ItemGroup>
 
   <ItemGroup>

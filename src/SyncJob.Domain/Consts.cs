@@ -5,6 +5,9 @@
         public const string DefaultDbTablePrefix = "SyncJob";
 
         public const string DefaultDbSchema = null;
+
+        public const int DefaultMaxLength = 128;
+
     }
 
 

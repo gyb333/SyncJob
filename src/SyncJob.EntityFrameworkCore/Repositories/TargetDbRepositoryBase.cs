@@ -1,6 +1,7 @@
 ﻿using SyncJob.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 using Volo.Abp.Domain.Entities;
 using Volo.Abp.Domain.Repositories.EntityFrameworkCore;
@@ -15,6 +16,9 @@ namespace Repositories
             : base(dbContextProvider)
         {
         }
+
+
+        
     }
 
 

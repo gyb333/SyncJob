@@ -33,7 +33,7 @@ namespace SyncJob.EntityFrameworkCore
         {
             base.OnModelCreating(builder);
 
-            builder.ConfigureSyncJob(options =>
+            builder.ConfigureSourceDb(options =>
             {
                 options.TablePrefix = TablePrefix;
                 options.Schema = Schema;

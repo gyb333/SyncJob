@@ -6,8 +6,8 @@ namespace SyncJob.EntityFrameworkCore
     public class ModelBuilderConfigOptions : ModelBuilderConfigurationOptions
     {
         public ModelBuilderConfigOptions(
-            [NotNull] string tablePrefix = Consts.DefaultDbTablePrefix,
-            [CanBeNull] string schema = Consts.DefaultDbSchema)
+            [NotNull] string tablePrefix = TargetDbConsts.DefaultDbTablePrefix,
+            [CanBeNull] string schema = TargetDbConsts.DefaultDbSchema)
             : base(
                 tablePrefix,
                 schema)
