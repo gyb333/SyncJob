@@ -14,7 +14,7 @@ using Volo.Abp.EntityFrameworkCore;
 
 namespace Repositories
 {
-    public class UserTargetRepository : EfCoreRepository<TargetDbContext, UserTarget>, IUserTargetRepository
+    public class UserTargetRepository : TargetDbRepositoryBase<UserTarget>, IUserTargetRepository
     {
         public UserTargetRepository(IDbContextProvider<TargetDbContext> dbContextProvider)
             :base(dbContextProvider)
@@ -22,9 +22,6 @@ namespace Repositories
 
         }
 
-        public async Task BatchInsert(IList<UserTarget> entites)
-        {
-           await BulkBatchHelper.BatchInsertAsync(DbContext, entites);
-        }
+      
     }
 }

@@ -42,11 +42,11 @@ namespace SyncJob.EntityFrameworkCore
                 //创建默认通用存储库
                 options.AddDefaultRepositories();//options.AddDefaultRepositories(includeAllEntities: true);
                 //覆盖默认通用存储库
-                //options.AddRepository<Book, UserRepository>(); //Replaces IRepository<User, int>
+                //options.AddRepository<UserTarget, UserTargetRepository>(); //Replaces IRepository<User, int>
 
-                options.SetDefaultRepositoryClasses(
-                    typeof(TargetDbRepositoryBase<,>),
-                    typeof(TargetDbRepositoryBase<>));
+                //options.SetDefaultRepositoryClasses(
+                //    typeof(TargetDbRepositoryBase<,>),
+                //    typeof(TargetDbRepositoryBase<>));
             });
         }
     }

@@ -10,6 +10,8 @@ namespace Entitys
     [Table("User")]
     public class UserTarget : EntityBase
     {
+        //[Key]
+        //[DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int UserID { get; set; }
 
         public string UserCode { get; set; }

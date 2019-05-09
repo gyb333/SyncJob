@@ -16,9 +16,10 @@ namespace EntityFramework.Extensions.EFCore
             where TEntity : class, IEntity
         {
             Stopwatch watch = Stopwatch.StartNew();
-
             await DbContext.BulkInsertAsync(entities);
             await DbContext.BulkSaveChangesAsync();
+            
+            
             watch.Stop();
             Console.WriteLine(string.Format("{0} entities are created, cost {1} milliseconds.", entities.Count, watch.ElapsedMilliseconds));
         }

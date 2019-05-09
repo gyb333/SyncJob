@@ -28,6 +28,9 @@ using Hangfire.Console;
 using Hangfire.Samples;
 using Volo.Abp.EntityFrameworkCore.SqlServer;
 
+using Microsoft.EntityFrameworkCore;
+using Z.EntityFramework.Extensions;
+
 namespace SyncJob.Host
 {
     [DependsOn(
@@ -52,19 +55,23 @@ namespace SyncJob.Host
 
             Configure<DbConnectionOptions>(options =>
             {
-                options.ConnectionStrings.Default = configuration.GetConnectionString("Hangfire");
+                options.ConnectionStrings.Default = configuration.GetConnectionString("TargetDb");
                 //options.ConnectionStrings.Add("SourceDb", configuration.GetConnectionString("SourceDb"));
                 //options.ConnectionStrings.Add("TargetDb", configuration.GetConnectionString("TargetDb"));
             });
 
             Configure<AbpDbContextOptions>(options =>
             {
-               
-                options.UseMySQL();
+
+                //options.UseMySQL();
+                options.UseSqlServer();
                 options.UseMySQL<SourceDbContext>();
                 options.UseSqlServer<TargetDbContext>();
 
+               
+
             });
+ 
 
             Configure<AbpAspNetCoreMvcOptions>(options =>
             {

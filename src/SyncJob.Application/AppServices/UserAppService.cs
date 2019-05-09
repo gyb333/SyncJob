@@ -17,14 +17,14 @@ namespace AppServices
         private readonly IUserRepository _userReposity;
         private readonly IUserManager _userManager;
  
-        private readonly IRepository<UserTarget> _repositoryUser;
+        private readonly IUserTargetRepository _userTargetRepository;
 
-        public UserAppService(IUserRepository userReposity, IUserManager userManager,  IRepository<UserTarget> repositoryUser)
+        public UserAppService(IUserRepository userReposity, IUserManager userManager, IUserTargetRepository userTargetRepository)
         {
             _userReposity = userReposity;
             _userManager = userManager;
-  
-            _repositoryUser= repositoryUser;
+
+            _userTargetRepository = userTargetRepository;
 
     }
         public async Task<List<User>> GetUsers()
@@ -35,12 +35,13 @@ namespace AppServices
 
       
 
-        public async void ExecUser()
+        public async Task ExecUser()
         {
             var users = await _userReposity.GetListAsync();
             var userList = ObjectMapper.Map<List<User>, List<UserTarget>>(users);
+            await _userTargetRepository.BatchInsertAsync(userList);
 
-            
+
         }
 
 

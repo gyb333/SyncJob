@@ -9,9 +9,9 @@ namespace SyncJob.EntityFrameworkCore
     [ConnectionStringName("TargetDb")]
     public class TargetDbContext : AbpDbContext<TargetDbContext>, ITargetDbContext
     {
-        public static string TablePrefix { get; set; } = Consts.DefaultDbTablePrefix;
+        public static string TablePrefix { get; set; } = TargetDbConsts.DefaultDbTablePrefix;
 
-        public static string Schema { get; set; } = Consts.DefaultDbSchema;
+        public static string Schema { get; set; } = TargetDbConsts.DefaultDbSchema;
 
         /* Add DbSet for each Aggregate Root here. Example:
          * public DbSet<Question> Questions { get; set; }
