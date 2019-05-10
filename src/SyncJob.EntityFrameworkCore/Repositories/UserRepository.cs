@@ -26,5 +26,18 @@ namespace Repositories
             return await DbContext.Set<User>()
                 .Where(p => p.UserCode == userCode).FirstOrDefaultAsync();
         }
+
+        public IEnumerable<User> GetUsers()
+        {
+            
+            return SqlQuery<User>(
+                $@"SELECT UserID,UserCode,CompanyID,CompanyBranchID,EmpID,PromoterID,IsValid,UserType,GroupPersonID,Remark
+                    FROM user; "
+                    );
+        }
+
+
+        
+
     }
 }

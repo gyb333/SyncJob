@@ -13,6 +13,7 @@ namespace Managers
         public UserTargetManager(IRepository<UserTarget> userRepository)
         {
             _userRepository=userRepository;
+           
         }
 
 

@@ -16,5 +16,6 @@ namespace Entitys
     {
         public virtual DateTime? LastModificationTime { get; set; }
         public virtual DateTime CreationTime { get; set; }
+         
     }
 }

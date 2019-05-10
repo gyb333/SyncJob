@@ -14,7 +14,7 @@ using Volo.Abp.EntityFrameworkCore;
 
 namespace Repositories
 {
-    public class UserTargetRepository : TargetDbRepositoryBase<UserTarget>, IUserTargetRepository
+    public class UserTargetRepository : TargetDbRepositoryBase<UserTarget,int>, IUserTargetRepository
     {
         public UserTargetRepository(IDbContextProvider<TargetDbContext> dbContextProvider)
             :base(dbContextProvider)

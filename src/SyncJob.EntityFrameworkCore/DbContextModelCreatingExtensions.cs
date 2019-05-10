@@ -66,9 +66,9 @@ namespace SyncJob.EntityFrameworkCore
                 //Configure table & schema name
                 b.ToTable(options.TablePrefix + "Users", options.Schema);
                 //Properties
-                b.HasKey(q => q.UserID);
-                b.Property(q => q.UserID).ValueGeneratedNever();//设置主键不自动递增
-                b.Property(q => q.UserID).IsRequired();
+                b.HasKey(q => q.Id);
+                b.Property(q => q.Id).ValueGeneratedNever();//设置主键不自动递增
+                b.Property(q => q.Id).IsRequired().HasColumnName("UserID");
                 b.Property(q => q.UserCode).IsRequired().HasMaxLength(Consts.DefaultMaxLength);
                 b.Property(q => q.CreationTime).HasColumnName("CreatDate").HasDefaultValueSql("(GETDATE())");
                 b.Property(q => q.LastModificationTime).HasColumnName("ModifyDate").IsRequired().HasDefaultValueSql("(GETDATE())");

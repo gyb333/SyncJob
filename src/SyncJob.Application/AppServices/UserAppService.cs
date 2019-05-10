@@ -27,18 +27,22 @@ namespace AppServices
             _userTargetRepository = userTargetRepository;
 
     }
-        public async Task<List<User>> GetUsers()
+        public  List<User> GetUsersTest()
         {
-            return await _userManager.GetUsers();
+            return   _userManager.GetUsers();
         }
 
+        public async Task<List<User>> GetUsersAsync()
+        {
+            return await _userManager.GetUsersAsync();
+        }
 
-      
 
         public async Task ExecUser()
         {
             var users = await _userReposity.GetListAsync();
             var userList = ObjectMapper.Map<List<User>, List<UserTarget>>(users);
+            var keys=_userTargetRepository.GetKeys(userList,$"select UserID FROM Users where UserID in (@Keys)");
             await _userTargetRepository.BatchInsertAsync(userList);
 
 

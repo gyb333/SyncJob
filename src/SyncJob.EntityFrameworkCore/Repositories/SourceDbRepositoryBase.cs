@@ -8,7 +8,7 @@ using Volo.Abp.EntityFrameworkCore;
 namespace Repositories
 {
     public class SourceDbRepositoryBase<TEntity>: RepositoryBase<SourceDbContext, TEntity>
-      where TEntity : class, IEntity
+      where TEntity : class, IEntity, new()
     {
         public SourceDbRepositoryBase(IDbContextProvider<SourceDbContext> dbContextProvider)
             : base(dbContextProvider)
@@ -18,7 +18,7 @@ namespace Repositories
 
 
     public class SourceDbRepositoryBase<TEntity, TKey>: RepositoryBase<SourceDbContext, TEntity, TKey>
-     where TEntity : class, IEntity<TKey>
+     where TEntity : class, IEntity<TKey>, new()
     {
         public SourceDbRepositoryBase(IDbContextProvider<SourceDbContext> dbContextProvider)
             : base(dbContextProvider)

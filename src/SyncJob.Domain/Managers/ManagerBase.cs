@@ -19,9 +19,11 @@ namespace Managers
             _repositoryBase = repositoryBase;
         }
 
+       
+
         public async Task BatchInsertAsync(IList<TEntity> entites)
         {
-            
+            //_repositoryBase
         }
 
         public async Task BatchUpdateAsync(IList<TEntity> entites)

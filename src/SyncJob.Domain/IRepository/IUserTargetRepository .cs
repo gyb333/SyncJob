@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace IRepository
 {
-    public interface IUserTargetRepository:IRepositoryBase<UserTarget>
+    public interface IUserTargetRepository:IRepositoryBase<UserTarget,int>
     {
          
     }

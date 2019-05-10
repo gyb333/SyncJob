@@ -8,11 +8,11 @@ using Volo.Abp.Domain.Entities;
 namespace Entitys
 {
     [Table("User")]
-    public class UserTarget : EntityBase
+    public class UserTarget : EntityBase<int>
     {
         //[Key]
         //[DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int UserID { get; set; }
+        //public int UserID { get; set; }
 
         public string UserCode { get; set; }
 
@@ -30,9 +30,11 @@ namespace Entitys
 
         public bool? IsDisabled { get; set; }
 
-        public override object[] GetKeys()
-        {
-            return new object[] { UserID };
-        }
+        //public override object[] GetKeys()
+        //{
+        //    return new object[] { UserID };
+        //}
+
+        
     }
 }

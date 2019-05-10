@@ -8,6 +8,8 @@ namespace IManagers
 {
     public interface IUserManager: IDomainService
     {
-        Task<List<User>> GetUsers();
+        Task<List<User>> GetUsersAsync();
+
+        List<User> GetUsers();
     }
 }

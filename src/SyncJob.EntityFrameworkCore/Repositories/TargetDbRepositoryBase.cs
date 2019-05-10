@@ -20,7 +20,7 @@ namespace Repositories
     /// </summary>
     /// <typeparam name="TEntity"></typeparam>
     public class TargetDbRepositoryBase<TEntity>: RepositoryBase<TargetDbContext, TEntity> 
-      where TEntity : class, IEntity
+      where TEntity : class, IEntity, new()
     {
         public TargetDbRepositoryBase(IDbContextProvider<TargetDbContext> dbContextProvider)
             : base(dbContextProvider)
@@ -32,7 +32,7 @@ namespace Repositories
 
 
     public class TargetDbRepositoryBase<TEntity, TKey>: RepositoryBase<TargetDbContext, TEntity, TKey>
-     where TEntity : class, IEntity<TKey>
+     where TEntity : class, IEntity<TKey>, new()
     {
         public TargetDbRepositoryBase(IDbContextProvider<TargetDbContext> dbContextProvider)
             : base(dbContextProvider)
