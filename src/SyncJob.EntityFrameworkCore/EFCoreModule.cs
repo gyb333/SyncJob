@@ -1,4 +1,6 @@
-﻿using Entitys;
+﻿
+using EntityFrameworkCore;
+using Entitys; 
 using Microsoft.Extensions.DependencyInjection;
 using Repositories;
 using Volo.Abp.EntityFrameworkCore;
@@ -14,8 +16,10 @@ namespace SyncJob.EntityFrameworkCore
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
+            
             context.Services.AddAbpDbContext<SourceDbContext>(options =>
             {
+               
                 /* Add custom repositories here. Example:
                  * options.AddRepository<Question, EfCoreQuestionRepository>();
                  */

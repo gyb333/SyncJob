@@ -6,6 +6,7 @@ namespace EntityFrameworkCore
 {
     public enum DBType
     {
+        NoSupport,
         SQLServer,
         MySQL
     }

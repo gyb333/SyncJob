@@ -42,7 +42,7 @@ namespace AppServices
         {
             var users = await _userReposity.GetListAsync();
             var userList = ObjectMapper.Map<List<User>, List<UserTarget>>(users);
-            var keys=_userTargetRepository.GetKeys(userList,$"select UserID FROM Users where UserID in (@Keys)");
+            var keys=_userTargetRepository.GetKeys(userList,$"select UserID FROM Users where UserID in @ids");
             await _userTargetRepository.BatchInsertAsync(userList);
 
 

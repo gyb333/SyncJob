@@ -1,8 +1,10 @@
-﻿using EntityFramework.Extensions.EFCore;
+﻿using Dapper;
+using EntityFramework.Extensions.EFCore;
 using EntityFrameworkCore;
 using IRepository;
 using JetBrains.Annotations;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -18,12 +20,24 @@ using Z.EntityFramework.Extensions;
 namespace Repositories
 {
     public  class RepositoryBase<TDbContext,TEntity> : EfCoreRepository<TDbContext, TEntity>, IRepositoryBase<TEntity>
-        where TDbContext : DbContext, IEfCoreDbContext
+        where TDbContext : DbContext, IDbContextBase
         where TEntity : class, IEntity, new()
     {
+        private DBType dbType = DBType.SQLServer;
+        private string ConnectionString = string.Empty;
+
+
         public RepositoryBase(IDbContextProvider<TDbContext> dbContextProvider)
             :base(dbContextProvider)
         {
+            //ConnectionString = DbContext.Database.GetDbConnection().ConnectionString;
+            //if (!DbContext.Database.ProviderName.ToUpper().Contains("SQLServer".ToUpper()))
+            //{
+            //    if (DbContext.Database.ProviderName.ToUpper().Contains("MySQL".ToUpper()))
+            //    {
+            //        dbType = DBType.MySQL;
+            //    }
+            //}
             // Using a constructor that requires optionsBuilder (EF Core) 
             EntityFrameworkManager.ContextFactory = context => DbContext;
             //EntityFrameworkManager.ContextFactory = context =>
@@ -35,6 +49,10 @@ namespace Repositories
             //    var optionsBuilder = new DbContextOptionsBuilder<TargetDbContext>();
             //    return new TargetDbContext(optionsBuilder.Options);
             //};
+            
+            
+           
+
         }
 
         #region 批处理
@@ -112,12 +130,26 @@ namespace Repositories
 
 
     public class RepositoryBase<TDbContext, TEntity, TKey> : EfCoreRepository<TDbContext, TEntity, TKey>, IRepositoryBase<TEntity, TKey>
-        where TDbContext : DbContext, IEfCoreDbContext
+        where TDbContext : DbContext, IDbContextBase
         where TEntity : class, IEntity<TKey>, new()
     {
+
+
+        private DBType dbType = DBType.SQLServer;
+        private string ConnectionString = string.Empty;
+
         public RepositoryBase(IDbContextProvider<TDbContext> dbContextProvider)
             : base(dbContextProvider)
         {
+
+            //ConnectionString = DbContext.Database.GetDbConnection().ConnectionString;
+            //if (!DbContext.Database.ProviderName.ToUpper().Contains("SQLServer".ToUpper()))
+            //{
+            //    if (DbContext.Database.ProviderName.ToUpper().Contains("MySQL".ToUpper()))
+            //    {
+            //        dbType = DBType.MySQL;
+            //    }
+            //}
             // Using a constructor that requires optionsBuilder (EF Core) 
             EntityFrameworkManager.ContextFactory = context => DbContext;
             //EntityFrameworkManager.ContextFactory = context =>
@@ -129,6 +161,8 @@ namespace Repositories
             //    var optionsBuilder = new DbContextOptionsBuilder<TargetDbContext>();
             //    return new TargetDbContext(optionsBuilder.Options);
             //};
+
+           
         }
 
         #region 批处理
@@ -204,12 +238,28 @@ namespace Repositories
         {
             IEnumerable<TEntity> result = new List<TEntity>();
             int pageCount = (entities.Count()-1) / PageSize+1;
-            for(int index = 0; index < pageCount; index++)
+            using (var dbConnection = DbContext.CreatConnection())
             {
-                var keys= entities.Skip(PageSize * index).Take(PageSize).Select(p => p.Id).JoinAsString(",");
-                SqlParameter sqlParameter = new SqlParameter("@Keys", keys);
-                result.Union(SqlQueryEntity(sql, new SqlParameter[] { sqlParameter }));
+                for (int index = 0; index < pageCount; index++)
+                {
+                    var keys = entities.Skip(PageSize * index).Take(PageSize).Select(p => p.Id).ToList();
+                    //SqlParameter sqlParameter = new SqlParameter("@Keys", keys);
+                    //var temp = SqlQueryEntity(sql, new SqlParameter[] { sqlParameter });
+                    try
+                    {
+                        var temp = dbConnection.Query<TEntity>(sql, new
+                        {
+                            ids = keys.ToArray()
+                        });
+                        result.Union(temp);
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+                }
             }
+           
 
 
 

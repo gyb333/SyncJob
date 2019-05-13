@@ -30,6 +30,7 @@ using Volo.Abp.EntityFrameworkCore.SqlServer;
 
 using Microsoft.EntityFrameworkCore;
 using Z.EntityFramework.Extensions;
+using Microsoft.Extensions.Options;
 
 namespace SyncJob.Host
 {
@@ -53,6 +54,10 @@ namespace SyncJob.Host
             var hostingEnvironment = context.Services.GetHostingEnvironment();
             var configuration = context.Services.BuildConfiguration();
 
+            //自定义注入
+            context.Services.AddSingleton(configuration);
+
+
             Configure<DbConnectionOptions>(options =>
             {
                 options.ConnectionStrings.Default = configuration.GetConnectionString("TargetDb");
@@ -60,20 +65,20 @@ namespace SyncJob.Host
                 //options.ConnectionStrings.Add("TargetDb", configuration.GetConnectionString("TargetDb"));
             });
 
+           
             Configure<AbpDbContextOptions>(options =>
             {
-
                 //options.UseMySQL();
                 options.UseSqlServer();
                 options.UseMySQL<SourceDbContext>();
+                 
                 options.UseSqlServer<TargetDbContext>();
 
                
 
             });
- 
-
-            Configure<AbpAspNetCoreMvcOptions>(options =>
+           
+           Configure<AbpAspNetCoreMvcOptions>(options =>
             {
                 options.ConventionalControllers.Create(typeof(ApplicationModule).Assembly);
             
@@ -155,7 +160,8 @@ namespace SyncJob.Host
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
             var app = context.GetApplicationBuilder();
-            
+
+
             app.UseVirtualFiles();
 
             app.UseSwagger();

@@ -25,6 +25,7 @@ namespace Repositories
         public TargetDbRepositoryBase(IDbContextProvider<TargetDbContext> dbContextProvider)
             : base(dbContextProvider)
         {
+             
         }
 
         

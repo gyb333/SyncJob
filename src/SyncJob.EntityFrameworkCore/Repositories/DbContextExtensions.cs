@@ -44,6 +44,8 @@ namespace Repositories
         {
             DbConnection conn = facade.GetDbConnection();
             dbConn = conn;
+            if (conn.State != ConnectionState.Closed)
+                conn.Close();
             conn.Open();
             DbCommand cmd = conn.CreateCommand();
             if (facade.ProviderName.ToUpper().Contains("SQLServer".ToUpper()))
