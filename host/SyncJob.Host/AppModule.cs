@@ -71,10 +71,11 @@ namespace SyncJob.Host
                 //options.UseMySQL();
                 options.UseSqlServer();
                 options.UseMySQL<SourceDbContext>();
-                 
-                options.UseSqlServer<TargetDbContext>();
 
-               
+                options.UseMySQL<TargetDbContext>();
+                //options.UseSqlServer<TargetDbContext>();
+
+
 
             });
            

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Consts
+namespace Domain.Shared
 {
     public static class ProductConsts
     {

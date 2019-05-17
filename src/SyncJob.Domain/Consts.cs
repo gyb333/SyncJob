@@ -1,4 +1,4 @@
-﻿namespace SyncJob
+﻿namespace Domain
 {
     public static class Consts
     {
@@ -7,6 +7,7 @@
         public const string DefaultDbSchema = null;
 
         public const int DefaultMaxLength = 128;
+ 
 
     }
 
@@ -22,7 +23,7 @@
 
     public static class TargetDbConsts
     {
-        public const string ConnectionStringName = "TargetDb";
+        public const string ConnectionStringName = "MySQLTargetDb";//"TargetDb";//"Hangfire";
 
         public const string DefaultDbTablePrefix = "";
 

@@ -1,9 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Diagnostics;
+using System.Linq;
 using System.Threading.Tasks;
 using Volo.Abp.Domain.Entities;
+using Dapper;
 
 
 namespace EntityFramework.Extensions.EFCore
@@ -16,10 +19,15 @@ namespace EntityFramework.Extensions.EFCore
             where TEntity : class, IEntity
         {
             Stopwatch watch = Stopwatch.StartNew();
+            try {
             await DbContext.BulkInsertAsync(entities);
             await DbContext.BulkSaveChangesAsync();
-            
-            
+            }catch(Exception ex)
+            {
+
+            }
+
+
             watch.Stop();
             Console.WriteLine(string.Format("{0} entities are created, cost {1} milliseconds.", entities.Count, watch.ElapsedMilliseconds));
         }
@@ -58,6 +66,9 @@ namespace EntityFramework.Extensions.EFCore
             Console.WriteLine(string.Format("{0} entities are merged, cost {1} milliseconds.", entities.Count, watch.ElapsedMilliseconds));
 
         }
+
+
+      
 
     }
 }

@@ -1,9 +1,11 @@
 ﻿
+using System.Data;
+using Domain;
 using EntityFrameworkCore;
 using Entitys;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
- 
+
 using Volo.Abp.Data;
 using Volo.Abp.EntityFrameworkCore;
 
@@ -43,6 +45,22 @@ namespace SyncJob.EntityFrameworkCore
                 options.TablePrefix = TablePrefix;
                 options.Schema = Schema;
             });
+        }
+
+        public string GetConnectionString()
+        {
+            return ConnectionString;
+        }
+
+        public DBType GetDBType()
+        {
+            return dbType;
+        }
+
+        public IDbConnection CreatConnection()
+        {
+            return this.CreatDbConnectionDapper(dbType, ConnectionString);
+
         }
     }
 }

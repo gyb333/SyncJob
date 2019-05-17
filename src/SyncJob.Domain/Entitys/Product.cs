@@ -1,5 +1,5 @@
 ﻿
-using Consts;
+using Domain.Shared;
 using ETO;
 using JetBrains.Annotations;
 using System;

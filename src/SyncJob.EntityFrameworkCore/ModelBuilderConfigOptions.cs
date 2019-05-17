@@ -1,7 +1,8 @@
-﻿using JetBrains.Annotations;
+﻿using Domain;
+using JetBrains.Annotations;
 using Volo.Abp.EntityFrameworkCore.Modeling;
 
-namespace SyncJob.EntityFrameworkCore
+namespace EntityFrameworkCore
 {
     public class ModelBuilderConfigOptions : ModelBuilderConfigurationOptions
     {

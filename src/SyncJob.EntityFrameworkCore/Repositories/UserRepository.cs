@@ -28,11 +28,10 @@ namespace Repositories
         }
 
         public IEnumerable<User> GetUsers()
-        {
-            
-            return SqlQuery<User>(
+        { 
+            return GetItems(
                 $@"SELECT UserID,UserCode,CompanyID,CompanyBranchID,EmpID,PromoterID,IsValid,UserType,GroupPersonID,Remark
-                    FROM user; "
+                    FROM user; ",null
                     );
         }
 

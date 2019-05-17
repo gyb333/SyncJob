@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SyncJob.EntityFrameworkCore;
+using EntityFrameworkCore;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.PermissionManagement.EntityFrameworkCore;
@@ -24,6 +24,7 @@ namespace SyncJob.Host
             modelBuilder.ConfigureAuditLogging();
 
             modelBuilder.ConfigureTargetDb();
+            //modelBuilder.ConfigureTargetDbMysql();
         }
     }
 }

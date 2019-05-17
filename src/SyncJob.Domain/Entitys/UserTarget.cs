@@ -7,12 +7,15 @@ using Volo.Abp.Domain.Entities;
 
 namespace Entitys
 {
-    [Table("User")]
+    [Table("Users")]
     public class UserTarget : EntityBase<int>
     {
         //[Key]
         //[DatabaseGenerated(DatabaseGeneratedOption.None)]
         //public int UserID { get; set; }
+
+        [Column("UserID")]
+        public override int Id { get; set; }
 
         public string UserCode { get; set; }
 

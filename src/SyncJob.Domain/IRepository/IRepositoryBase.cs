@@ -26,12 +26,7 @@ namespace IRepository
 
         
 
-        Task<int> ExecuteSqlCommandAsync([NotNull] string sql, [NotNull] params object[] parameters);
-
-        Task<int> ExecuteSqlCommandAsync([NotNull]  string sql, [NotNull] IEnumerable<object> parameters, CancellationToken cancellationToken = default);
-        Task<int> ExecuteSqlCommandAsync([NotNull] string  sql, CancellationToken cancellationToken = default);
-
-        Task<int> ExecuteSqlCommandAsync([NotNull] FormattableString sql, CancellationToken cancellationToken = default);
+       
     }
 
 
@@ -47,15 +42,9 @@ namespace IRepository
 
         Task BatchMergeAsync(IList<TEntity> entites);
 
+ 
+        IEnumerable<TEntity> GetItemsByKeys([NotNull]IEnumerable<IEntity<TKey>> entities, string sql,int PageSize= 2000);
 
-        Task<int> ExecuteSqlCommandAsync([NotNull] string sql, [NotNull] params object[] parameters);
-
-        Task<int> ExecuteSqlCommandAsync([NotNull]  string sql, [NotNull] IEnumerable<object> parameters, CancellationToken cancellationToken = default);
-        Task<int> ExecuteSqlCommandAsync([NotNull] string sql, CancellationToken cancellationToken = default);
-
-        Task<int> ExecuteSqlCommandAsync([NotNull] FormattableString sql, CancellationToken cancellationToken = default);
-
-
-        IEnumerable<TEntity> GetKeys([NotNull]IEnumerable<TEntity> entities, string sql,int PageSize= 100);
+        IEnumerable<TEntity> GetItemsByTempTable([NotNull]IEnumerable<IEntity<TKey>> entities, string sql, string strTableName="Ids");
     }
 }

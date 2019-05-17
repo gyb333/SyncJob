@@ -5,6 +5,7 @@ using IRepository;
 using JetBrains.Annotations;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -15,7 +16,9 @@ using System.Threading.Tasks;
 using Volo.Abp.Domain.Entities;
 using Volo.Abp.Domain.Repositories.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
+using Z.Dapper.Plus;
 using Z.EntityFramework.Extensions;
+//using Z.EntityFramework.Extensions;
 
 namespace Repositories
 {
@@ -23,23 +26,14 @@ namespace Repositories
         where TDbContext : DbContext, IDbContextBase
         where TEntity : class, IEntity, new()
     {
-        private DBType dbType = DBType.SQLServer;
-        private string ConnectionString = string.Empty;
-
-
+    
         public RepositoryBase(IDbContextProvider<TDbContext> dbContextProvider)
             :base(dbContextProvider)
         {
-            //ConnectionString = DbContext.Database.GetDbConnection().ConnectionString;
-            //if (!DbContext.Database.ProviderName.ToUpper().Contains("SQLServer".ToUpper()))
-            //{
-            //    if (DbContext.Database.ProviderName.ToUpper().Contains("MySQL".ToUpper()))
-            //    {
-            //        dbType = DBType.MySQL;
-            //    }
-            //}
+
             // Using a constructor that requires optionsBuilder (EF Core) 
             EntityFrameworkManager.ContextFactory = context => DbContext;
+            
             //EntityFrameworkManager.ContextFactory = context =>
             //{
             //    return dbContextProvider.GetDbContext();
@@ -49,9 +43,9 @@ namespace Repositories
             //    var optionsBuilder = new DbContextOptionsBuilder<TargetDbContext>();
             //    return new TargetDbContext(optionsBuilder.Options);
             //};
-            
-            
-           
+
+
+
 
         }
 
@@ -65,6 +59,7 @@ namespace Repositories
         public async Task BatchInsertAsync(IList<TEntity> entites)
         {
             await BulkBatchHelper.BatchInsertAsync(DbContext, entites);
+
         }
     
 
@@ -104,27 +99,33 @@ namespace Repositories
         }
         #endregion
 
-        #region SQL查询 需要实体具有公共的无参构造函数
-        public DataTable SqlQuery(string sql, params object[] parameters)
+
+        public int ExecuteCommandDapper(string strSql, DynamicParameters param)
         {
-            
-            return  DbContext.Database.SqlQuery(sql, parameters);
+            using (var conn = DbContext.CreatConnection())
+            {
+                return conn.Execute(strSql, param);
+            }
         }
 
-        public IEnumerable<T> SqlQuery<T>(string sql, params object[] parameters)
-            where T : class, new()
+        public TEntity GetItem(string strSql, DynamicParameters param)
         {
-            return DbContext.Database.SqlQuery<T>(sql, parameters);
+            using (var conn = DbContext.CreatConnection())
+            {
+                return conn.GetItem<TEntity>(strSql, param);
+            }
+
         }
 
-        public IEnumerable<TEntity> SqlQueryEntity(string sql, params object[] parameters)
+        public IEnumerable<TEntity> GetItems(string strSql, DynamicParameters param)
         {
-            return DbContext.Database.SqlQuery<TEntity>(sql, parameters);
+            using (var conn = DbContext.CreatConnection())
+            {
+                return conn.GetItems<TEntity>(strSql, param);
+            }
         }
-        #endregion
 
 
-     
 
     }
 
@@ -135,21 +136,12 @@ namespace Repositories
     {
 
 
-        private DBType dbType = DBType.SQLServer;
-        private string ConnectionString = string.Empty;
+      
 
         public RepositoryBase(IDbContextProvider<TDbContext> dbContextProvider)
             : base(dbContextProvider)
         {
 
-            //ConnectionString = DbContext.Database.GetDbConnection().ConnectionString;
-            //if (!DbContext.Database.ProviderName.ToUpper().Contains("SQLServer".ToUpper()))
-            //{
-            //    if (DbContext.Database.ProviderName.ToUpper().Contains("MySQL".ToUpper()))
-            //    {
-            //        dbType = DBType.MySQL;
-            //    }
-            //}
             // Using a constructor that requires optionsBuilder (EF Core) 
             EntityFrameworkManager.ContextFactory = context => DbContext;
             //EntityFrameworkManager.ContextFactory = context =>
@@ -162,20 +154,33 @@ namespace Repositories
             //    return new TargetDbContext(optionsBuilder.Options);
             //};
 
-           
+
         }
 
         #region 批处理
         public async Task BatchDeleteAsync(IList<TEntity> entites)
         {
-            
+
             await BulkBatchHelper.BatchDeleteAsync(DbContext, entites);
         }
 
 
         public async Task BatchInsertAsync(IList<TEntity> entites)
         {
-            await BulkBatchHelper.BatchInsertAsync(DbContext, entites);
+            //await BulkBatchHelper.BatchInsertAsync(DbContext, entites);
+            using (var conn = DbContext.CreatConnection())
+            {
+                try
+                {
+                    conn.BulkInsert(entites);
+
+                }
+                catch (Exception ex)
+                {
+
+                }
+
+            }
         }
 
 
@@ -192,83 +197,95 @@ namespace Repositories
         }
         #endregion
 
-        #region 实体上下文执行命令
-        public async Task<int> ExecuteSqlCommandAsync([NotNull] string sql, [NotNull] params object[] parameters)
+        public   int ExecuteCommandDapper(string strSql, DynamicParameters param)
         {
-            return await DbContext.Database.ExecuteSqlCommandAsync(new RawSqlString(sql), parameters);
+            using (var conn = DbContext.CreatConnection())
+            {
+                return conn.Execute(strSql, param);
+            }
         }
 
-        public async Task<int> ExecuteSqlCommandAsync([NotNull]  string sql, [NotNull] IEnumerable<object> parameters, CancellationToken cancellationToken = default)
+        public   TEntity GetItem(string strSql, DynamicParameters param)
         {
-            return await DbContext.Database.ExecuteSqlCommandAsync(new RawSqlString(sql), parameters, cancellationToken);
+            using (var conn = DbContext.CreatConnection())
+            {
+                return conn.GetItem<TEntity>(strSql, param);
+            }
+             
         }
 
-
-        public async Task<int> ExecuteSqlCommandAsync([NotNull] string sql, CancellationToken cancellationToken = default)
+        public  IEnumerable<TEntity> GetItems(string strSql, DynamicParameters param)
         {
-            return await DbContext.Database.ExecuteSqlCommandAsync(new RawSqlString(sql));
-        }
-        public async Task<int> ExecuteSqlCommandAsync([NotNull] FormattableString sql, CancellationToken cancellationToken = default)
-        {
-
-            return await DbContext.Database.ExecuteSqlCommandAsync(sql);
-        }
-        #endregion
-
-        #region SQL查询 需要实体具有公共的无参构造函数
-        public DataTable SqlQuery(string sql, params SqlParameter[] parameters)
-        {
-            return DbContext.Database.SqlQuery(sql, parameters);
+            using (var conn = DbContext.CreatConnection())
+            {
+                return conn.GetItems<TEntity>(strSql, param);
+            }            
         }
 
-        public IEnumerable<T> SqlQuery<T>(string sql, params SqlParameter[] parameters)
-            where T : class, new()
+        public   TEntity GetItemByKey(string strSql, TKey id)
         {
-            return DbContext.Database.SqlQuery<T>(sql, parameters);
+            using (var conn = DbContext.CreatConnection())
+            {
+                return conn.GetItemByKey<TEntity, TKey>(strSql, id);
+            }
+            
         }
 
-        public IEnumerable<TEntity> SqlQueryEntity(string sql, params SqlParameter[] parameters)
+        /// <summary>
+        /// SQL 字符串长度存在限制，使用下面的分批次查询汇总
+        /// </summary>
+        /// <param name="strSql"></param>
+        /// <param name="keys"></param>
+        /// <returns></returns>
+        public IEnumerable<TEntity> GetItemsByKeys(string strSql, TKey[] keys)
         {
-            return DbContext.Database.SqlQuery<TEntity>(sql, parameters);
+            using (var conn = DbContext.CreatConnection())
+            {
+                return conn.GetItemsByKeys<TEntity, TKey>(strSql, keys);
+            }
         }
-        #endregion
 
-
-        public IEnumerable<TEntity> GetKeys([NotNull]IEnumerable<TEntity> entities, string sql,int PageSize=100)
+        public IEnumerable<TEntity> GetItemsByKeys([NotNull]IEnumerable<IEntity<TKey>> entities, string sql, int PageSize=2000)
         {
-            IEnumerable<TEntity> result = new List<TEntity>();
-            int pageCount = (entities.Count()-1) / PageSize+1;
+            List<TEntity> result = new List<TEntity>();
+            int pageCount = (entities.Count() - 1) / PageSize + 1;
             using (var dbConnection = DbContext.CreatConnection())
             {
                 for (int index = 0; index < pageCount; index++)
                 {
                     var keys = entities.Skip(PageSize * index).Take(PageSize).Select(p => p.Id).ToList();
-                    //SqlParameter sqlParameter = new SqlParameter("@Keys", keys);
-                    //var temp = SqlQueryEntity(sql, new SqlParameter[] { sqlParameter });
-                    try
-                    {
-                        var temp = dbConnection.Query<TEntity>(sql, new
-                        {
-                            ids = keys.ToArray()
-                        });
-                        result.Union(temp);
-                    }
-                    catch (Exception ex)
-                    {
-
-                    }
+                    var temp = dbConnection.GetItemsByKeys<TEntity, TKey>(sql, keys.ToArray());
+                     result.AddRange(temp);  
                 }
             }
-           
-
-
-
             return result;
         }
 
-        
+        public IEnumerable<TEntity> GetItemsByTempTable([NotNull]IEnumerable<IEntity<TKey>> entities, string sql, string strTableName = "Ids")
+        {
+            IReadOnlyCollection<TEntity> result = null;
+            using (var dbConnection = DbContext.CreatConnection())
+            {
+                switch (DbContext.GetDBType())
+                {
+                    case DBType.SQLServer:
+                        //var conn = dbConnection as SqlConnection;
+                        //result = conn.GetItemsByTempTable<TEntity, TKey>(entities, sql, strTableName);
+                        //break;
+                    case DBType.MySQL:
+                        var mysqlConn = dbConnection as MySqlConnection;
+                        result = mysqlConn.GetItemsByTempTable<TEntity, TKey>(entities, sql, strTableName);
+                        break;
+                    default:
+                        break;
+                }
+                return result;
+            }
+
+        }
+
+     
+ 
     }
-
-
 
 }

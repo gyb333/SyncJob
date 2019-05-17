@@ -1,5 +1,6 @@
 ﻿
 using System.Data;
+using Domain;
 using EntityFrameworkCore;
 using Entitys;
 using Microsoft.EntityFrameworkCore;
@@ -19,19 +20,19 @@ namespace SyncJob.EntityFrameworkCore
         /* Add DbSet for each Aggregate Root here. Example:
          * public DbSet<Question> Questions { get; set; }
          */
-        //public DbSet<User> Users { get; set; }
+        public DbSet<UserTarget> Users { get; set; }
 
-        public DbSet<Book> Books { get; set; }
+        //public DbSet<Book> Books { get; set; }
 
         public static string ConnectionString { get; private set; }
-        public static DBType dbType { get; private set; }
+        public static DBType BbType { get; private set; }
 
         public TargetDbContext(DbContextOptions<TargetDbContext> options, IConfigurationRoot configuration) 
             : base(options)
         {
             
-            ConnectionString = configuration.GetConnectionString(SourceDbConsts.ConnectionStringName);
-            dbType = Database.ProviderName.GetDBType();
+            ConnectionString = configuration.GetConnectionString(TargetDbConsts.ConnectionStringName);
+            BbType = Database.ProviderName.GetDBType();
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -45,11 +46,13 @@ namespace SyncJob.EntityFrameworkCore
         {
             base.OnModelCreating(builder);
 
-            builder.ConfigureTargetDb(options =>
-            {
-                options.TablePrefix = TablePrefix;
-                options.Schema = Schema;
-            });
+            builder.ConfigureTargetDbMysql
+               //builder.ConfigureTargetDb
+               (options =>
+                {
+                    options.TablePrefix = TablePrefix;
+                    options.Schema = Schema;
+                });
         }
 
         public string GetConnectionString()
@@ -59,12 +62,12 @@ namespace SyncJob.EntityFrameworkCore
 
         public DBType GetDBType()
         {
-            return dbType;
+            return BbType;
         }
 
         public IDbConnection CreatConnection()
         {
-            return this.CreatDbConnectionDapper(dbType, ConnectionString);
+            return this.CreatDbConnectionDapper(BbType, ConnectionString);
 
         }
     }
