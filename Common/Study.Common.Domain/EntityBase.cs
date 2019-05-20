@@ -4,7 +4,7 @@ using System.Text;
 using Volo.Abp.Auditing;
 using Volo.Abp.Domain.Entities;
 
-namespace Entitys
+namespace Study.Common.Domain
 {
     public abstract class EntityBase<TKey> : Entity<TKey>,IHasCreationTime, IHasModificationTime
     {

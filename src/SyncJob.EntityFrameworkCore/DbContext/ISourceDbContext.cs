@@ -1,10 +1,11 @@
 ﻿
 using Domain;
-using EntityFrameworkCore;
+ 
 using Entitys;
 using Microsoft.EntityFrameworkCore;
+using Study.Common.EFCore;
 using Volo.Abp.Data;
-using Volo.Abp.EntityFrameworkCore;
+ 
 
 namespace SyncJob.EntityFrameworkCore
 {

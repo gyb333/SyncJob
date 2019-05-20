@@ -9,9 +9,12 @@
 
   <ItemGroup>
     <Compile Remove="DbContext\DynamicTypeHelper.cs" />
+    <Compile Remove="Repositories\DbContextExtensions.cs" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Common\Study.Common.EFCore\Study.Common.EFCore.csproj" />
+    <ProjectReference Include="..\..\Common\Study.Common\Study.Common.csproj" />
     <ProjectReference Include="..\SyncJob.Domain\SyncJob.Domain.csproj" />
     <PackageReference Include="Dapper" Version="1.60.6" />
     <PackageReference Include="Microsoft.CSharp" Version="4.5.0" />

@@ -1,5 +1,5 @@
 ﻿
-using Entitys;
+ 
 using JetBrains.Annotations;
 using System;
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using Volo.Abp.Domain.Entities;
 using Volo.Abp.Domain.Repositories;
 
-namespace IRepository
+namespace Study.Common.Domain
 {
     public interface IRepositoryBase<TEntity> :IRepository<TEntity>
         where TEntity : class, IEntity

@@ -5,7 +5,8 @@ using EntityFrameworkCore;
 using Entitys;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-
+using Study.Common;
+using Study.Common.EFCore;
 using Volo.Abp.Data;
 using Volo.Abp.EntityFrameworkCore;
 

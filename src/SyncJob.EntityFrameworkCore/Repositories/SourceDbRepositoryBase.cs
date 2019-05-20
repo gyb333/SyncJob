@@ -1,4 +1,5 @@
-﻿using SyncJob.EntityFrameworkCore;
+﻿using Study.Common.EFCore;
+using SyncJob.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;

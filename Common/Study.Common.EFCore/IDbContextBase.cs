@@ -1,12 +1,9 @@
-﻿
-using EntityFrameworkCore;
-using Entitys;
-using Microsoft.EntityFrameworkCore;
+﻿ 
 using System.Data;
 using Volo.Abp.Data;
 using Volo.Abp.EntityFrameworkCore;
 
-namespace EntityFrameworkCore
+namespace Study.Common.EFCore
 {
  
     public interface IDbContextBase : IEfCoreDbContext

@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using MySql.Data.MySqlClient;
+using Study.Common;
 using System;
 using System.Collections.Generic;
 using System.Data;

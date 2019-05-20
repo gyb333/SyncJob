@@ -1,5 +1,4 @@
-﻿using Entitys;
-using IRepository;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,7 +7,7 @@ using Volo.Abp.Domain.Entities;
 using Volo.Abp.Domain.Repositories;
 using Volo.Abp.Domain.Services;
 
-namespace Managers
+namespace Study.Common.Domain
 {
     public class ManagerBase<TEntity> : DomainService
           where TEntity : class, IEntity

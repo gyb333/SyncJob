@@ -8,7 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Common\Study.Common.Domain\Study.Common.Domain.csproj" />
     <ProjectReference Include="..\SyncJob.Domain.Shared\SyncJob.Domain.Shared.csproj" />
+    <PackageReference Include="System.Reflection.Emit" Version="4.3.0" />
     <PackageReference Include="Volo.Abp.BackgroundJobs" Version="0.16.0" />
     <PackageReference Include="Volo.Abp.Ddd.Domain" Version="0.16.0" />
     <PackageReference Include="Volo.Abp.Emailing" Version="0.16.0" />

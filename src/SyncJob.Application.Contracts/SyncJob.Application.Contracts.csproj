@@ -9,7 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SyncJob.Domain.Shared\SyncJob.Domain.Shared.csproj" />
-    <PackageReference Include="Volo.Abp.Ddd.Application" Version="0.16.0" />
+    <PackageReference Include="Volo.Abp.Ddd.Application" Version="0.17.0" />
   </ItemGroup>
 
   <ItemGroup>

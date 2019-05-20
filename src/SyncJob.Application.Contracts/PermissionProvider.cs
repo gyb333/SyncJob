@@ -8,7 +8,7 @@ namespace SyncJob
     {
         public override void Define(IPermissionDefinitionContext context)
         {
-            //var moduleGroup = context.AddGroup(SyncJobPermissions.GroupName, L("Permission:SyncJob"));
+            var moduleGroup = context.AddGroup(Permissions.GroupName, L("Permission:SyncJob"));
         }
 
         private static LocalizableString L(string name)

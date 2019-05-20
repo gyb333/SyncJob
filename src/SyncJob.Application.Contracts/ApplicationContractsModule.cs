@@ -25,7 +25,7 @@ namespace SyncJob
             {
                 options.Resources
                     .Get<Resource>()
-                    .AddVirtualJson("/MyCompanyName/SyncJob/Localization/ApplicationContracts");
+                    .AddVirtualJson("/Localization/ApplicationContracts");
             });
         }
     }

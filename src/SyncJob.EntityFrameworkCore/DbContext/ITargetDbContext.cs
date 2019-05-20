@@ -3,6 +3,7 @@ using Domain;
 using EntityFrameworkCore;
 using Entitys;
 using Microsoft.EntityFrameworkCore;
+using Study.Common.EFCore;
 using SyncJob;
 using System.Data;
 using Volo.Abp.Data;

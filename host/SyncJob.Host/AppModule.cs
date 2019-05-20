@@ -31,6 +31,10 @@ using Volo.Abp.EntityFrameworkCore.SqlServer;
 using Microsoft.EntityFrameworkCore;
 using Z.EntityFramework.Extensions;
 using Microsoft.Extensions.Options;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.Extensions.Localization;
+using SyncJob.Localization;
+using Permissions;
 
 namespace SyncJob.Host
 {
@@ -56,6 +60,8 @@ namespace SyncJob.Host
 
             //自定义注入
             context.Services.AddSingleton(configuration);
+
+           
 
 
             Configure<DbConnectionOptions>(options =>
@@ -160,6 +166,21 @@ namespace SyncJob.Host
 
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
         {
+            #region 添加权限
+            var authorizationService = context.ServiceProvider.GetRequiredService<IAuthorizationService>();
+            var l = context.ServiceProvider.GetRequiredService<IStringLocalizer<Resource>>();
+
+
+            //var rootMenuItem = new ApplicationMenuItem("ProductManagement", l["Menu:ProductManagement"]);
+
+            if ( authorizationService.IsGranted(UserPermissions.GroupName))
+            {
+                //rootMenuItem.AddItem(new ApplicationMenuItem("Products", l["Menu:Products"], "/ProductManagement/Products"));
+            }
+
+            //context.Menu.AddItem(rootMenuItem);
+            #endregion
+
             var app = context.GetApplicationBuilder();
 
 

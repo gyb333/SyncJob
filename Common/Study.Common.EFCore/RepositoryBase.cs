@@ -1,11 +1,12 @@
 ﻿using Dapper;
 using EntityFramework.Extensions.EFCore;
-using EntityFrameworkCore;
-using IRepository;
+
 using JetBrains.Annotations;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using MySql.Data.MySqlClient;
+using Study.Common.Domain;
+using Study.Common.EFCore;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -16,11 +17,10 @@ using System.Threading.Tasks;
 using Volo.Abp.Domain.Entities;
 using Volo.Abp.Domain.Repositories.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
-using Z.Dapper.Plus;
-using Z.EntityFramework.Extensions;
-//using Z.EntityFramework.Extensions;
 
-namespace Repositories
+using Z.EntityFramework.Extensions;
+
+namespace Study.Common.EFCore
 {
     public  class RepositoryBase<TDbContext,TEntity> : EfCoreRepository<TDbContext, TEntity>, IRepositoryBase<TEntity>
         where TDbContext : DbContext, IDbContextBase
@@ -167,20 +167,8 @@ namespace Repositories
 
         public async Task BatchInsertAsync(IList<TEntity> entites)
         {
-            //await BulkBatchHelper.BatchInsertAsync(DbContext, entites);
-            using (var conn = DbContext.CreatConnection())
-            {
-                try
-                {
-                    conn.BulkInsert(entites);
-
-                }
-                catch (Exception ex)
-                {
-
-                }
-
-            }
+            await BulkBatchHelper.BatchInsertAsync(DbContext, entites);
+           
         }
 
 

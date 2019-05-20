@@ -1,10 +1,10 @@
 ﻿using Dapper;
-using EntityFrameworkCore;
-using Entitys;
+
 using JetBrains.Annotations;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using MySql.Data.MySqlClient;
+ 
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -15,7 +15,7 @@ using System.Text;
 using Volo.Abp.Domain.Entities;
 using Z.Dapper.Plus;
 
-namespace EntityFrameworkCore
+namespace Study.Common.EFCore
 {
     public static class DapperExtensions
     {
@@ -175,7 +175,7 @@ namespace EntityFrameworkCore
         public static IReadOnlyCollection<TEntity> GetItemsByTempTable<TEntity, TKey>(this MySqlConnection conn, [NotNull]IEnumerable<IEntity<TKey>> entities, string sql,string strTableName="Ids")
             where TEntity : class, IEntity<TKey> 
         {
-            var keys = entities.Select(p=>new IdEntity<TKey>(p.Id,$"`#Temp{strTableName}`")).ToArray(); 
+            var keys = entities.Select(p=>new IdEntity<TKey>(p.Id)).ToArray(); 
 
 
             var itemList = new HashSet<IdEntity<TKey>>(keys);

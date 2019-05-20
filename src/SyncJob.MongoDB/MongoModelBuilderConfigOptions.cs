@@ -1,4 +1,5 @@
-﻿using JetBrains.Annotations;
+﻿using Domain;
+using JetBrains.Annotations;
 using Volo.Abp.MongoDB;
 
 namespace SyncJob.MongoDB

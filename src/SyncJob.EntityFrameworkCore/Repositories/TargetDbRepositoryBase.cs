@@ -2,6 +2,7 @@
 using IRepository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
+using Study.Common.EFCore;
 using SyncJob.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

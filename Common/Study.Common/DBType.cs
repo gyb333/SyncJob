@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace EntityFrameworkCore
+namespace Study.Common
 {
     public enum DBType
     {

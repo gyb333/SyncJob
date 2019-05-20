@@ -11,16 +11,18 @@ namespace SyncJob.Host
     {
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
+            // 注入 Abp 相关的服务。
             services.AddApplication<AppModule>(options =>
             {
                 options.UseAutofac();
             });
-
+            // 接管自带的 IoC Container。
             return services.BuildServiceProviderFromFactory();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            // 配置 ASP.NET Core Mvc 相关参数。
             app.InitializeApplication();
         }
     }

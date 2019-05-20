@@ -1,4 +1,5 @@
-﻿using Volo.Abp.Data;
+﻿using Domain;
+using Volo.Abp.Data;
 using Volo.Abp.MongoDB;
 
 namespace SyncJob.MongoDB
