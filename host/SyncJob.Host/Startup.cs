@@ -15,6 +15,7 @@ namespace SyncJob.Host
             services.AddApplication<AppModule>(options =>
             {
                 options.UseAutofac();
+                options.Configuration.UserSecretsAssembly = typeof(Startup).Assembly;
             });
             // 接管自带的 IoC Container。
             return services.BuildServiceProviderFromFactory();
