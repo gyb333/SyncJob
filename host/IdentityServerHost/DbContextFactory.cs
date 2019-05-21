@@ -5,16 +5,16 @@ using Microsoft.Extensions.Configuration;
 
 namespace IdentityServerHost
 {
-    public class DemoAppDbContextFactory : IDesignTimeDbContextFactory<DemoAppDbContext>
+    public class DbContextFactory : IDesignTimeDbContextFactory<DbContext>
     {
-        public DemoAppDbContext CreateDbContext(string[] args)
+        public DbContext CreateDbContext(string[] args)
         {
             var configuration = BuildConfiguration();
 
-            var builder = new DbContextOptionsBuilder<DemoAppDbContext>()
-                .UseSqlServer(configuration.GetConnectionString("Default"));
+            var builder = new DbContextOptionsBuilder<DbContext>()
+                .UseSqlServer(configuration.GetConnectionString("Identity"));
 
-            return new DemoAppDbContext(builder.Options);
+            return new DbContext(builder.Options);
         }
 
         private static IConfigurationRoot BuildConfiguration()

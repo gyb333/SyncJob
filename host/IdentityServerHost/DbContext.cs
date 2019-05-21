@@ -8,9 +8,9 @@ using Volo.Abp.SettingManagement.EntityFrameworkCore;
 
 namespace IdentityServerHost
 {
-    public class DemoAppDbContext : AbpDbContext<DemoAppDbContext>
+    public class DbContext : AbpDbContext<DbContext>
     {
-        public DemoAppDbContext(DbContextOptions<DemoAppDbContext> options)
+        public DbContext(DbContextOptions<DbContext> options)
             : base(options)
         {
 

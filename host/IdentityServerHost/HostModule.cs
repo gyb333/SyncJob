@@ -11,6 +11,7 @@ using Volo.Abp.Identity.AspNetCore;
 using Volo.Abp.Identity.EntityFrameworkCore;
 using Volo.Abp.IdentityServer.EntityFrameworkCore;
 using Volo.Abp.Modularity;
+using Volo.Abp.Threading;
 
 namespace IdentityServerHost
 {
@@ -22,7 +23,7 @@ namespace IdentityServerHost
         typeof(AbpIdentityEntityFrameworkCoreModule),
         typeof(AbpEntityFrameworkCoreSqlServerModule)
         )]
-    public class IdentityServerHostModule : AbpModule
+    public class HostModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
@@ -31,11 +32,12 @@ namespace IdentityServerHost
 
             Configure<DbConnectionOptions>(options =>
             {
-                options.ConnectionStrings.Default = configuration.GetConnectionString("Default");
+                options.ConnectionStrings.Default = configuration.GetConnectionString("Identity");
             });
 
             Configure<AbpDbContextOptions>(options =>
             {
+                //默认连接使用的数据库
                 options.UseSqlServer();
             });
 
@@ -45,12 +47,12 @@ namespace IdentityServerHost
                 iis.AutomaticAuthentication = false;
             });
 
-            context.Services.AddDistributedSqlServerCache(options =>
-            {
-                options.ConnectionString = configuration.GetConnectionString("SqlServerCache");
-                options.SchemaName = "dbo";
-                options.TableName = "TestCache";
-            });
+            //context.Services.AddDistributedSqlServerCache(options =>
+            //{
+            //    options.ConnectionString = configuration.GetConnectionString("SqlServerCache");
+            //    options.SchemaName = "dbo";
+            //    options.TableName = "TestCache";
+            //});
         }
 
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
@@ -65,17 +67,14 @@ namespace IdentityServerHost
 
             app.UseMvcWithDefaultRoute();
 
-            SeedData(context);
+            //SeedData(context);
+            AsyncHelper.RunSync(async () =>
+            {
+                await context.SeedDataAsync();
+            } 
+            );
         }
 
-        private void SeedData(ApplicationInitializationContext context)
-        {
-            using (var scope = context.ServiceProvider.CreateScope())
-            {
-                scope.ServiceProvider
-                    .GetRequiredService<IdentityServerDataSeeder>()
-                    .Seed();
-            }
-        }
+         
     }
 }

@@ -35,6 +35,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Localization;
 using SyncJob.Localization;
 using Permissions;
+using Volo.Abp.Auditing;
 
 namespace SyncJob.Host
 {
@@ -125,19 +126,23 @@ namespace SyncJob.Host
             //    options.TableName = "TestCache";
             //});
 
+             
             context.Services.AddAuthentication("Bearer")
-                .AddIdentityServerAuthentication(options =>
-                {
-                    options.Authority = configuration["AuthServer:Authority"];
-                    options.RequireHttpsMetadata = false;
+               .AddIdentityServerAuthentication(options =>
+               {
+                   options.Authority = configuration["AuthServer:Authority"];
+                   options.ApiName = configuration["AuthServer:ApiName"];
+                   options.RequireHttpsMetadata = false;
+                    //TODO: Should create an extension method for that (may require to create a new ABP package depending on the IdentityServer4.AccessTokenValidation)
+                   options.InboundJwtClaimTypeMap["sub"] = AbpClaimTypes.UserId;
+                   options.InboundJwtClaimTypeMap["role"] = AbpClaimTypes.Role;
+                   options.InboundJwtClaimTypeMap["email"] = AbpClaimTypes.Email;
+                   options.InboundJwtClaimTypeMap["email_verified"] = AbpClaimTypes.EmailVerified;
+                   options.InboundJwtClaimTypeMap["phone_number"] = AbpClaimTypes.PhoneNumber;
+                   options.InboundJwtClaimTypeMap["phone_number_verified"] = AbpClaimTypes.PhoneNumberVerified;
+                   options.InboundJwtClaimTypeMap["name"] = AbpClaimTypes.UserName;
+               });
 
-                    options.ApiName = "api1";
-
-                    //TODO: Can we make this by default?
-                    options.InboundJwtClaimTypeMap["sub"] = AbpClaimTypes.UserId;
-                    options.InboundJwtClaimTypeMap["role"] = AbpClaimTypes.Role;
-                    options.InboundJwtClaimTypeMap["email"] = AbpClaimTypes.Email;
-                });
 
             context.Services.AddHangfire(config =>
             {
@@ -161,7 +166,22 @@ namespace SyncJob.Host
             {
                 options.DefaultTimeout = 864000; //10 days (as seconds)
             });
-            
+
+
+            //context.Services.AddDistributedRedisCache(options =>
+            //{
+            //    options.Configuration = configuration["Redis:Configuration"];
+            //});
+
+            //Configure<AbpAuditingOptions>(options =>
+            //{
+            //    options.IsEnabledForGetRequests = true;
+            //    options.ApplicationName = "IdentityService";
+            //});
+
+            //var redis = ConnectionMultiplexer.Connect(configuration["Redis:Configuration"]);
+            //context.Services.AddDataProtection()
+            //    .PersistKeysToStackExchangeRedis(redis, "MsDemo-DataProtection-Keys");
         }
 
         public override void OnApplicationInitialization(ApplicationInitializationContext context)

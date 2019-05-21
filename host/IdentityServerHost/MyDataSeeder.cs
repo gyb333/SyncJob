@@ -1,4 +1,5 @@
-﻿using System;
+﻿ 
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Volo.Abp.DependencyInjection;
@@ -9,13 +10,13 @@ using Volo.Abp.Threading;
 
 namespace IdentityServerHost
 {
-    public class IdentityServerDataSeeder : ITransientDependency
+    public class MyDataSeeder : ITransientDependency
     {
         private readonly IApiResourceRepository _apiResourceRepository;
         private readonly IClientRepository _clientRepository;
         private readonly IIdentityResourceRepository _identityResourceRepository;
 
-        public IdentityServerDataSeeder(
+        public MyDataSeeder(
             IClientRepository clientRepository, 
             IApiResourceRepository apiResourceRepository, 
             IIdentityResourceRepository identityResourceRepository)
@@ -32,7 +33,7 @@ namespace IdentityServerHost
 
         private async Task SeedAsync()
         {
-            if (await _clientRepository.FindByCliendIdAsync("test-client") != null)
+            if (await _clientRepository.FindByCliendIdAsync("client") != null)
             {
                 return;
             }
@@ -61,12 +62,12 @@ namespace IdentityServerHost
         {
             var client = new Client(
                 Guid.NewGuid(), 
-                "test-client"
+                "client"
                 )
             {
-                ClientName = "test-client",
+                ClientName = "client",
                 ProtocolType = "oidc",
-                Description = "test-client",
+                Description = "client",
                 AlwaysIncludeUserClaimsInIdToken = true,
                 AllowOfflineAccess = true,
                 AbsoluteRefreshTokenLifetime = 31536000 //365 days
@@ -82,13 +83,15 @@ namespace IdentityServerHost
             client.AddGrantType("client_credentials");
             client.AddGrantType("password");
 
-            client.AddSecret("K7gNU3sdo+OL0wNhqoVWhr3g6s1xYv72ol/pe/Unols=");
+            client.AddSecret("K7gNU3sdo+OL0wNhqoVWhr3g6s1xYv72ol/pe/Unols=");//"secret".Sha256()
 
             await _clientRepository.InsertAsync(client);
         }
 
         private async Task SaveIdentityResourcesAsync()
         {
+           
+
             var identityResourceOpenId = new IdentityResource(Guid.NewGuid(), "openid", "OpenID", required: true);
             await _identityResourceRepository.InsertAsync(identityResourceOpenId);
 
