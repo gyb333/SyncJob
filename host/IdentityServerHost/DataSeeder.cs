@@ -8,13 +8,14 @@ using Volo.Abp.Guids;
 using Volo.Abp.IdentityServer.ApiResources;
 using Volo.Abp.IdentityServer.Clients;
 using Volo.Abp.IdentityServer.IdentityResources;
-using Volo.Abp.PermissionManagement;
+using Volo.Abp.Authorization.Permissions;
 using static IdentityModel.OidcConstants;
 
 namespace IdentityServerHost
 {
     public class DataSeeder : AbstractDataSeeder
     {
+         
         public DataSeeder(IClientRepository clientRepository,
                 IApiResourceRepository apiResourceRepository,
                 IIdentityResourceRepository identityResourceRepository,
